@@ -401,6 +401,7 @@
      junto con el rollo. Mismo monospace que el margen impreso, para que los dos se
      lean como cosas escritas sobre la pelicula y no como interfaz. */
   .tail{
+    position: relative;
     flex: 0 0 auto;
     width: clamp(190px, 34vw, 430px);
     align-self: stretch;
@@ -438,6 +439,27 @@
     text-transform: none;      /* MatiCepe es un handle, conserva su caja */
     letter-spacing: .12em;
   }
+
+  .colofon-link{
+    position: absolute;
+    left: 0; right: 0;
+    bottom: calc(34px + 15px + 12px);
+    z-index: 4;
+    margin: 0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 9px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    line-height: 2.1;
+    text-align: center;
+  }
+  .colofon-link a{
+    color: rgba(var(--tint), .3);
+    text-decoration: none;
+    transition: color .2s ease;
+  }
+  .colofon-link a:hover,
+  .colofon-link a:focus-visible{ color: rgba(var(--tint), .6); }
 
 
   .privacy{ color: var(--mute); font-size: .94rem; max-width: 40ch; }
@@ -582,6 +604,7 @@
              data-peaks="[0.001,0.205,0.184,0.416,0.31,0.331,0.416,0.259,0.352,0.238,0.243,0.71,0.352,0.217,0.523,0.395,0.148,0.295,0.401,0.603,0.601,0.336,0.311,0.232,0.528,0.367,0.375,0.262,0.371,0.31,0.244,0.54,0.571,0.236,0.359,0.219,0.548,0.531,0.378,0.48,0.448,0.848,1.0,0.511,0.326,0.214,0.343,0.062]"></div>
         <p class="colofon">revelado por<b>MatiCepe</b></p>
       </div>
+      <p class="colofon-link"><a href="privacidad/">privacidad</a></p>
     </div>
   </div>
 </div>
