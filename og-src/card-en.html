@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Karla:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --ink:  #0F0F09;
+    --hole: #0B0C07;
+    --pink: #FF7A2E;
+    --text: #EFF0E4;
+    --mute: #9DA18B;
+    --tint: 236, 245, 214;
+    --display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+    --body:    "Karla", ui-sans-serif, system-ui, sans-serif;
+  }
+  *{ box-sizing: border-box; margin: 0; }
+  body{
+    width: 1200px; height: 630px;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--body);
+    overflow: hidden;
+    position: relative;
+  }
+  /* El mismo riel de perforaciones que enmarca la landing */
+  .rail{
+    position: absolute; left: 0; right: 0; height: 34px; z-index: 2;
+    background: repeating-linear-gradient(to right,
+      transparent 0 14px, var(--hole) 14px 32px, transparent 32px 46px);
+    opacity: .9;
+  }
+  .rail.t{ top: 0; } .rail.b{ bottom: 0; }
+  .row{
+    height: 630px; display: flex; align-items: center; gap: 64px;
+    padding: 34px 76px;
+  }
+  .col{ flex: 1; }
+  .wordmark{ width: 132px; display: block; margin-bottom: 22px; }
+  h1{
+    font-family: var(--display);
+    font-size: 74px;
+    font-variation-settings: "wdth" 125, "wght" 800;
+    letter-spacing: -.035em;
+    line-height: .94;
+  }
+  .lead{ margin-top: 20px; font-size: 22px; line-height: 1.45; color: var(--mute); max-width: 30ch; }
+  .dom{
+    margin-top: 30px;
+    font-family: var(--display);
+    font-variation-settings: "wdth" 104, "wght" 700;
+    font-size: 20px; letter-spacing: .02em; color: var(--pink);
+  }
+  /* El cuadro: esquina viva, que es la del material fotografico */
+  .frame{
+    display: block; height: 534px; width: auto;
+    box-shadow: 0 0 0 1px rgba(var(--tint), .09);
+  }
+  .shot{ flex: 0 0 auto; }
+</style>
+</head>
+<body>
+  <div class="rail t"></div>
+  <div class="row">
+    <div class="col">
+      <img class="wordmark" src="../img/sniq_wordmark.png" alt="sniq">
+      <h1>hear your moments</h1>
+      <p class="lead">Take the picture like you always do. The sound was already there.</p>
+      <p class="dom">sniq.app</p>
+    </div>
+    <div class="shot"><img class="frame" src="frame.jpg" alt=""></div>
+  </div>
+  <div class="rail b"></div>
+</body>
+</html>
