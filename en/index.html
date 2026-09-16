@@ -1,756 +1,952 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>hear your moments</title>
-<meta name="description" content="Take the picture like you always do. The sound was already there. Free, no account, no ads.">
-<meta name="theme-color" content="#0F0F09">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>hear your moments</title>
+        <meta
+            name="description"
+            content="Take the picture like you always do. The sound was already there. Free, no account, no ads."
+        />
+        <meta name="theme-color" content="#0F0F09" />
 
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="sniq">
-<meta property="og:url" content="https://sniq.app/en/">
-<meta property="og:title" content="hear your moments">
-<meta property="og:description" content="Take the picture like you always do. The sound was already there. Free, no account, no ads.">
-<meta property="og:image" content="https://sniq.app/en/og.jpg">
-<meta property="og:image:type" content="image/jpeg">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A photo of a cat, and below it the band with the sound of that moment.">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="es_AR">
-<meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="canonical" href="https://sniq.app/en/">
-<link rel="alternate" hreflang="es" href="https://sniq.app/">
-<link rel="alternate" hreflang="en" href="https://sniq.app/en/">
-<link rel="alternate" hreflang="x-default" href="https://sniq.app/">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Karla:wght@400;500;700&display=swap">
-<style>
-  *{ box-sizing: border-box; }
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="sniq" />
+        <meta property="og:url" content="https://sniq.app/en/" />
+        <meta property="og:title" content="hear your moments" />
+        <meta
+            property="og:description"
+            content="Take the picture like you always do. The sound was already there. Free, no account, no ads."
+        />
+        <meta property="og:image" content="https://sniq.app/en/og.jpg" />
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta
+            property="og:image:alt"
+            content="A photo of a cat, and below it the band with the sound of that moment."
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="es_AR" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" href="../favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="../apple-touch-icon.png" />
+        <link rel="canonical" href="https://sniq.app/en/" />
+        <link rel="alternate" hreflang="es" href="https://sniq.app/" />
+        <link rel="alternate" hreflang="en" href="https://sniq.app/en/" />
+        <link rel="alternate" hreflang="x-default" href="https://sniq.app/" />
+        <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Karla:wght@400;500;700&display=swap"
+        />
+        <style>
+            * {
+                box-sizing: border-box;
+            }
 
-  :root{
-    --ink:    #0F0F09;
-    --ink-rgb: 15, 15, 9;   /* el fondo con alfa, para el velo del cuadro */
-    --strip:  #24261A;   /* el material del carrete */
-    --hole:   #0B0C07;
-    --pink:   #FF7A2E;   /* mandarina */
-    --pink-rgb: 255, 122, 46;   /* el acento con alfa: a un hex no se le puede poner */
-    --pink-d: #E26721;   /* el hover */
-    --text:   #EFF0E4;
-    --mute:   #9DA18B;
-    --cuadro: min(46dvh, 460px, calc(100vw - 76px));  /* el ancho de un cuadro del rollo */
-    --deep:   #15170F;   /* el fondo de la banda */
-    --unexp:  #363927;   /* el cuadro sin exponer */
-    --btnink: #0E0F09;   /* la tinta sobre el acento */
-    --tint:   236, 245, 214;   /* el claro del que salen filos, barras y palabras */
+            :root {
+                --ink: #0f0f09;
+                --ink-rgb: 15, 15, 9;
+                --strip: #24261a;
+                --hole: #0b0c07;
+                --pink: #ff7a2e;
+                --pink-rgb: 255, 122, 46;
+                --pink-d: #e26721;
+                --text: #eff0e4;
+                --mute: #9da18b;
+                --cuadro: min(46dvh, 460px, calc(100vw - 76px));
+                --deep: #15170f;
+                --unexp: #363927;
+                --btnink: #0e0f09;
+                --tint: 236, 245, 214;
 
-    --display: "Archivo", ui-sans-serif, system-ui, sans-serif;
-    --body:    "Karla", ui-sans-serif, system-ui, -apple-system, sans-serif;
-    color-scheme: dark;
-  }
+                --display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+                --body: "Karla", ui-sans-serif, system-ui, -apple-system, sans-serif;
+                color-scheme: dark;
+            }
 
-  html, body{ height: 100vh; height: 100dvh; }
-  body{
-    margin: 0;
-    background: var(--ink);
-    color: var(--text);
-    font-family: var(--body);
-    font-size: 17px;
-    line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    overflow: hidden;
-  }
-  img{ max-width: 100%; }
+            html,
+            body {
+                height: 100vh;
+                height: 100dvh;
+            }
+            body {
+                margin: 0;
+                background: var(--ink);
+                color: var(--text);
+                font-family: var(--body);
+                font-size: 17px;
+                line-height: 1.6;
+                -webkit-font-smoothing: antialiased;
+                overflow: hidden;
+            }
+            img {
+                max-width: 100%;
+            }
 
-  /* tipografía de la dirección A: expandida, en minúscula */
-  h1,h2{ font-family: var(--display); margin: 0; text-wrap: balance; }
-  h1{
-    font-size: clamp(2.3rem, 4.4vw, 3.7rem);
-    font-variation-settings: "wdth" 125, "wght" 800;
-    letter-spacing: -.035em;
-    line-height: .94;
-  }
-  h2{
-    font-size: clamp(1.7rem, 3vw, 2.5rem);
-    font-variation-settings: "wdth" 118, "wght" 800;
-    letter-spacing: -.03em;
-    line-height: .99;
-  }
-  p{ margin: 0; }
-  .lead{ font-size: clamp(1.05rem, 1.6vw, 1.22rem); max-width: 32ch; }
-  /* El signo que une las dos mitades del formato, en el mismo negro que las
-     perforaciones: queda troquelado en el titulo, como agujereado en la pelicula.
-     El filo claro de abajo es el espesor de la pelicula tomando luz; sin el, a este
-     tamano el agujero se pierde contra el fondo. */
-  .plus{
-    color: var(--hole);
-    text-shadow: 0 .022em 0 rgba(var(--tint), .17);
-    padding-inline: .04em;
-  }
+            h1,
+            h2 {
+                font-family: var(--display);
+                margin: 0;
+                text-wrap: balance;
+            }
+            h1 {
+                font-size: clamp(2.3rem, 4.4vw, 3.7rem);
+                font-variation-settings:
+                    "wdth" 125,
+                    "wght" 800;
+                letter-spacing: -0.035em;
+                line-height: 0.94;
+            }
+            h2 {
+                font-size: clamp(1.7rem, 3vw, 2.5rem);
+                font-variation-settings:
+                    "wdth" 118,
+                    "wght" 800;
+                letter-spacing: -0.03em;
+                line-height: 0.99;
+            }
+            p {
+                margin: 0;
+            }
+            .lead {
+                font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+                max-width: 32ch;
+            }
+            .plus {
+                color: var(--hole);
+                text-shadow: 0 0.022em 0 rgba(var(--tint), 0.17);
+                padding-inline: 0.04em;
+            }
 
-  /* una letra por cuadro. Leidas en orden dan s-n-i-q: la marca escondida
-     en el rollo, que aparece recien en la segunda pasada. */
-  .pink{ color: var(--pink); }
-  .say{ color: var(--mute); max-width: 40ch; }
-  .say b{ color: var(--text); font-weight: 700; }
+            .pink {
+                color: var(--pink);
+            }
+            .say {
+                color: var(--mute);
+                max-width: 40ch;
+            }
+            .say b {
+                color: var(--text);
+                font-weight: 700;
+            }
 
-  /* ---------- el carrete ---------- */
+            /* ---------- roll ---------- */
 
-  .viewport{
-    /* dvh y no vh: en el telefono la barra del navegador entra y sale, y con vh
-       el cuadro queda mas alto que lo que se ve y el rollo parece trabado */
-    height: 100vh;
-    height: 100dvh;
-    overflow-x: auto;
-    overflow-y: hidden;
-    overscroll-behavior-x: contain;
-    touch-action: pan-x;
-    -webkit-overflow-scrolling: touch;
-  }
-  .viewport:focus-visible{ outline: 2px solid var(--pink); outline-offset: -4px; }
+            .viewport {
+                height: 100vh;
+                height: 100dvh;
+                overflow-x: auto;
+                overflow-y: hidden;
+                overscroll-behavior-x: contain;
+                touch-action: pan-x;
+                -webkit-overflow-scrolling: touch;
+            }
+            .viewport:focus-visible {
+                outline: 2px solid var(--pink);
+                outline-offset: -4px;
+            }
 
-  .roll{
-    position: relative;
-    width: max-content;
-    height: 100%;
-    display: flex;
-    align-items: stretch;
-    background: var(--strip);
-  }
+            .roll {
+                position: relative;
+                width: max-content;
+                height: 100%;
+                display: flex;
+                align-items: stretch;
+                background: var(--strip);
+            }
 
-  /* perforaciones: arriba y abajo, corriendo a lo largo de todo el rollo */
-  .rail{
-    position: absolute;
-    left: 0; right: 0;
-    height: 34px;
-    background:
-      repeating-linear-gradient(
-        to right,
-        transparent 0 14px,
-        var(--hole) 14px 32px,
-        transparent 32px 46px
-      );
-    opacity: .9;
-    pointer-events: none;
-    z-index: 3;
-  }
-  .rail.t{ top: 0; }
-  .rail.b{ bottom: 0; }
-  .rail::after{
-    content: "";
-    position: absolute; left: 0; right: 0;
-    height: 1px;
-    background: rgba(var(--tint), .07);
-  }
-  .rail.t::after{ bottom: -1px; }
-  .rail.b::after{ top: -1px; }
+            .rail {
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 34px;
+                background: repeating-linear-gradient(
+                    to right,
+                    transparent 0 14px,
+                    var(--hole) 14px 32px,
+                    transparent 32px 46px
+                );
+                opacity: 0.9;
+                pointer-events: none;
+                z-index: 3;
+            }
+            .rail.t {
+                top: 0;
+            }
+            .rail.b {
+                bottom: 0;
+            }
+            .rail::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                height: 1px;
+                background: rgba(var(--tint), 0.07);
+            }
+            .rail.t::after {
+                bottom: -1px;
+            }
+            .rail.b::after {
+                top: -1px;
+            }
 
-  /* ---------- el margen impreso ----------
-     El 35 mm lleva impreso, entre las perforaciones y el cuadro, el fabricante, el
-     codigo de emulsion y el numero de cuadro. Este rollo lleva el suyo, y el numero
-     de cuadro sube en cada repeticion como en la pelicula de verdad.
+            .edge {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 34px;
+                height: 15px;
+                z-index: 2;
+                display: flex;
+                align-items: center;
+                overflow: hidden;
+                pointer-events: none;
+                user-select: none;
+                white-space: nowrap;
+                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size: 8.5px;
+                letter-spacing: 0.2em;
+                color: rgba(var(--tint), 0.19);
+            }
 
-     El codigo es de una sola via y no se puede volver atras. Lo que entra a
-     generarlo no se escribe en ningun archivo que el navegador reciba: esto es
-     HTML servido, y un comentario aca se lee con ver-codigo-fuente. */
-  .edge{
-    position: absolute;
-    left: 0; right: 0;
-    bottom: 34px;
-    height: 15px;
-    z-index: 2;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 8.5px;
-    letter-spacing: .2em;
-    color: rgba(var(--tint), .19);
-  }
-  /* el codigo toma el acento, como el ambar del borde de un negativo */
-  .edge b{ font-weight: 400; color: rgba(var(--pink-rgb), .5); }
-  .edge i{ font-style: normal; color: rgba(var(--tint), .26); }
+            .edge b {
+                font-weight: 400;
+                color: rgba(var(--pink-rgb), 0.5);
+            }
+            .edge i {
+                font-style: normal;
+                color: rgba(var(--tint), 0.26);
+            }
 
-  /* la capa de atras: se arrastra mas lento que el rollo */
-  .ghosts{
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    overflow: hidden;
-    pointer-events: none;
-  }
-  .ghost{
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translate(-50%, -50%);
-    font-family: var(--display);
-    font-variation-settings: "wdth" 125, "wght" 800;
-    font-size: clamp(4rem, 14vw, 9.5rem);
-    letter-spacing: -.05em;
-    color: rgba(var(--tint), .05);
-    white-space: nowrap;
-    user-select: none;
-    will-change: transform;
-  }
+            .ghosts {
+                position: absolute;
+                inset: 0;
+                z-index: 1;
+                overflow: hidden;
+                pointer-events: none;
+            }
+            .ghost {
+                position: absolute;
+                top: 50%;
+                left: 0;
+                transform: translate(-50%, -50%);
+                font-family: var(--display);
+                font-variation-settings:
+                    "wdth" 125,
+                    "wght" 800;
+                font-size: clamp(4rem, 14vw, 9.5rem);
+                letter-spacing: -0.05em;
+                color: rgba(var(--tint), 0.05);
+                white-space: nowrap;
+                user-select: none;
+                will-change: transform;
+            }
 
-  .panel{
-    position: relative;
-    z-index: 2;
-    height: 100%;
-    padding-block: 64px;
-    padding-inline: clamp(28px, 3.4vw, 62px);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 18px;
-    border-right: 1px solid rgba(var(--tint), .06);
-  }
-  .panel.words{ width: min(88vw, 540px); }
-  .panel.frame{
-    padding-inline: clamp(18px, 2vw, 30px);
-    align-items: center;
-  }
+            .panel {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                padding-block: 64px;
+                padding-inline: clamp(28px, 3.4vw, 62px);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                gap: 18px;
+                border-right: 1px solid rgba(var(--tint), 0.06);
+            }
+            .panel.words {
+                width: min(88vw, 540px);
+            }
+            .panel.frame {
+                padding-inline: clamp(18px, 2vw, 30px);
+                align-items: center;
+            }
 
-  .num{
-    font-family: var(--display);
-    font-variation-settings: "wdth" 100, "wght" 700;
-    font-size: .78rem;
-    letter-spacing: .2em;
-    color: var(--pink);
-  }
+            .num {
+                font-family: var(--display);
+                font-variation-settings:
+                    "wdth" 100,
+                    "wght" 700;
+                font-size: 0.78rem;
+                letter-spacing: 0.2em;
+                color: var(--pink);
+            }
 
-  .brand{ width: 88px; display: block; margin-bottom: 8px; }
+            .brand {
+                width: 88px;
+                display: block;
+                margin-bottom: 8px;
+            }
 
-  .cta{
-    display: inline-block;
-    background: var(--pink);
-    color: var(--btnink);
-    font-family: var(--display);
-    font-variation-settings: "wdth" 100, "wght" 700;
-    font-size: 1rem;
-    letter-spacing: -.01em;
-    text-decoration: none;
-    padding: 15px 30px;
-    /* pildora, como las barras de la onda y el boton de play: la esquina viva
-       es del material fotografico (cuadros, perforaciones), no de los controles */
-    border-radius: 99px;
-  }
-  .cta:hover{ background: var(--pink-d); }
-  .cta:focus-visible{ outline: 2px solid var(--text); outline-offset: 3px; }
+            .cta {
+                display: inline-block;
+                background: var(--pink);
+                color: var(--btnink);
+                font-family: var(--display);
+                font-variation-settings:
+                    "wdth" 100,
+                    "wght" 700;
+                font-size: 1rem;
+                letter-spacing: -0.01em;
+                text-decoration: none;
+                padding: 15px 30px;
 
-  /* El boton mientras la app no esta. Misma pildora, para que el bloque siga
-     anclado igual, pero vaciada y sin link: un relleno naranja pide un click
-     que hoy no lleva a ningun lado. Cuando salga, vuelve a ser
-     <a class="cta" href="…"> y esta regla se borra. */
-  .cta.soon{
-    background: none;
-    color: var(--pink);
-    box-shadow: inset 0 0 0 1px rgba(var(--pink-rgb), .55);
-    cursor: default;
-  }
-  .under{ font-size: .88rem; color: var(--mute); }
+                border-radius: 99px;
+            }
+            .cta:hover {
+                background: var(--pink-d);
+            }
+            .cta:focus-visible {
+                outline: 2px solid var(--text);
+                outline-offset: 3px;
+            }
 
-  /* las tres promesas: una por renglon, que se lean de un vistazo */
-  .claims{
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    font-family: var(--display);
-    font-variation-settings: "wdth" 104, "wght" 700;
-    font-size: clamp(1.02rem, 1.5vw, 1.18rem);
-    letter-spacing: -.02em;
-    line-height: 1.2;
-    color: var(--text);
-  }
+            .cta.soon {
+                background: none;
+                color: var(--pink);
+                box-shadow: inset 0 0 0 1px rgba(var(--pink-rgb), 0.55);
+                cursor: default;
+            }
+            .under {
+                font-size: 0.88rem;
+                color: var(--mute);
+            }
 
-  /* ---------- el sniq: un cuadro del rollo, siempre vertical ---------- */
+            .claims {
+                display: flex;
+                flex-direction: column;
+                gap: 1px;
+                font-family: var(--display);
+                font-variation-settings:
+                    "wdth" 104,
+                    "wght" 700;
+                font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+                letter-spacing: -0.02em;
+                line-height: 1.2;
+                color: var(--text);
+            }
 
-  /* El ancho manda y el alto sale de la proporción real del clip, que es
-     vertical (800 × 1072, o 800 × 968 cuando ya trae la banda quemada).
-     Nunca se le toca el alto al <video>: eso lo calcula _sniq.js. */
-  .sniq{
-    display: block;
-    width: var(--cuadro);
-  }
-  .sniq-btn{
-    display: block;
-    width: 100%;
-    padding: 0; border: 0; background: none; cursor: pointer;
-    color: inherit; font: inherit; text-align: left;
-  }
-  .sniq-btn:focus-visible{ outline: 2px solid var(--pink); outline-offset: 4px; }
+            .sniq {
+                display: block;
+                width: var(--cuadro);
+            }
+            .sniq-btn {
+                display: block;
+                width: 100%;
+                padding: 0;
+                border: 0;
+                background: none;
+                cursor: pointer;
+                color: inherit;
+                font: inherit;
+                text-align: left;
+            }
+            .sniq-btn:focus-visible {
+                outline: 2px solid var(--pink);
+                outline-offset: 4px;
+            }
 
-  /* El cuadro se levanta de la tira al pasarle el mouse, que es lo que se hace con
-     una pelicula: se la despega y se la pone contra la luz. Por eso son dos cosas a
-     la vez, el alzado y el velo que se abre, y no una sombra sola.
-     Solo con mouse: en un telefono :hover se queda pegado despues del toque. */
-  @media (hover: hover){
-    /* Se levanta con top y no con transform, a proposito. Un transform en un ancestro
-       de un <video> lo promueve a capa compositada y el navegador lo rasteriza a la
-       escala de esa capa: el clip se ve pixelado mientras la capa existe. Con top no
-       hay capa nueva. Mover un solo cuadro 7 px cuesta un reflow que a esta escala no
-       se nota, y el video se sigue dibujando a resolucion nativa.
+            @media (hover: hover) {
+                .sniq-btn {
+                    position: relative;
+                    top: 0;
+                    transition: top 0.3s cubic-bezier(0.2, 0.7, 0.3, 1);
+                }
+                .shot {
+                    transition: box-shadow 0.3s ease;
+                }
 
-       Solo se levanta. El velo no se toca: aclararlo cambiaba la foto, y la foto es
-       lo unico que no se toca. Lo que dice que el cuadro se movio es la sombra. */
-    .sniq-btn{ position: relative; top: 0; transition: top .3s cubic-bezier(.2,.7,.3,1); }
-    .shot{ transition: box-shadow .3s ease; }
+                .sniq-btn:hover {
+                    top: -7px;
+                }
+                .sniq-btn:hover .shot {
+                    box-shadow: 0 16px 38px rgba(0, 0, 0, 0.55);
+                }
+            }
 
-    .sniq-btn:hover{ top: -7px; }
-    .sniq-btn:hover .shot{ box-shadow: 0 16px 38px rgba(0, 0, 0, .55); }
-  }
+            .shot {
+                position: relative;
+                display: block;
+                overflow: hidden;
+                background: #000;
+            }
+            .shot video {
+                display: block;
+                width: 100%;
+                object-fit: cover;
+                object-position: top;
+            }
+            .veil {
+                position: absolute;
+                inset: 0;
+                display: grid;
+                place-items: center;
+                background: radial-gradient(
+                    110% 80% at 50% 45%,
+                    rgba(var(--ink-rgb), 0.04),
+                    rgba(var(--ink-rgb), 0.48)
+                );
+                transition: opacity 0.3s ease;
+            }
+            .playing .veil {
+                opacity: 0 !important;
+            }
+            .play {
+                width: 56px;
+                height: 56px;
+                border-radius: 99px;
+                background: var(--pink);
+                display: grid;
+                place-items: center;
+                box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+            }
+            .play svg {
+                width: 17px;
+                height: 19px;
+                margin-left: 3px;
+                fill: var(--btnink);
+                display: block;
+            }
 
-  .shot{
-    position: relative;
-    display: block;
-    overflow: hidden;
-    background: #000;
-  }
-  .shot video{
-    display: block;
-    width: 100%;
-    object-fit: cover;
-    object-position: top;
-  }
-  .veil{
-    position: absolute; inset: 0;
-    display: grid; place-items: center;
-    background: radial-gradient(110% 80% at 50% 45%,
-      rgba(var(--ink-rgb), .04), rgba(var(--ink-rgb), .48));
-    transition: opacity .3s ease;
-  }
-  .playing .veil{ opacity: 0 !important; }
-  .play{
-    width: 56px; height: 56px; border-radius: 99px;
-    background: var(--pink);
-    display: grid; place-items: center;
-    box-shadow: 0 8px 28px rgba(0,0,0,.55);
-  }
-  .play svg{ width: 17px; height: 19px; margin-left: 3px; fill: var(--btnink); display: block; }
+            .stamp {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                height: 42px;
+                padding: 0 11px;
+                background: var(--deep);
+            }
+            .stamp .mk {
+                width: 18px;
+                height: 18px;
+                flex: 0 0 auto;
+                opacity: 0.95;
+            }
+            .stamp .bars {
+                flex: 1 1 auto;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                min-width: 0;
+            }
+            .stamp .bars i {
+                flex: 0 0 auto;
+                display: block;
+                border-radius: 99px;
+                background: rgba(var(--tint), 0.45);
+            }
+            .stamp .bars i.on {
+                background: var(--pink);
+            }
 
-  .stamp{
-    display: flex; align-items: center; gap: 10px;
-    height: 42px;
-    padding: 0 11px;
-    background: var(--deep);
-  }
-  .stamp .mk{ width: 18px; height: 18px; flex: 0 0 auto; opacity: .95; }
-  .stamp .bars{ flex: 1 1 auto; display: flex; align-items: center; height: 100%; min-width: 0; }
-  .stamp .bars i{ flex: 0 0 auto; display: block; border-radius: 99px; background: rgba(var(--tint), .45); }
-  .stamp .bars i.on{ background: var(--pink); }
+            .blank {
+                width: var(--cuadro);
+            }
+            .unexposed {
+                position: relative;
+                display: block;
+                aspect-ratio: 800 / 968;
+                background:
+                    radial-gradient(
+                        120% 62% at 50% 118%,
+                        rgba(var(--pink-rgb), 0.42),
+                        rgba(var(--pink-rgb), 0.08) 46%,
+                        transparent 72%
+                    ),
+                    linear-gradient(148deg, rgba(var(--tint), 0.07), rgba(var(--tint), 0) 46%), var(--unexp);
+                box-shadow: inset 0 0 0 1px rgba(var(--tint), 0.09);
+            }
 
-  /* el cuadro sin revelar: el ultimo del rollo, el que todavia es tuyo.
-     No es negro. Es el mismo material del carrete, mas claro, porque una pelicula sin
-     exponer es material y no un agujero: antes estaba a 1,07:1 del strip, o sea que no
-     se veia, y el cuadro leia como un video que no cargo.
-     Encima pasan dos cosas. La luz entra por abajo, que es un cuadro ya expuesto al que
-     le falta el revelado, y las escuadras del visor dicen donde apuntar. */
-  .blank{ width: var(--cuadro); }
-  .unexposed{
-    position: relative;
-    display: block;
-    aspect-ratio: 800 / 968;
-    background:
-      radial-gradient(120% 62% at 50% 118%,
-        rgba(var(--pink-rgb), .42), rgba(var(--pink-rgb), .08) 46%, transparent 72%),
-      linear-gradient(148deg, rgba(var(--tint), .07), rgba(var(--tint), 0) 46%),
-      var(--unexp);
-    box-shadow: inset 0 0 0 1px rgba(var(--tint), .09);
-  }
-  /* Cada esquina son dos rayas. Ocho gradientes evitan ocho elementos vacios en el html,
-     y el brazo se mide contra el ancho del cuadro para que no encoja al agrandarse. */
-  .unexposed::after{
-    content: "";
-    position: absolute;
-    inset: calc(var(--cuadro) * .05);
-    --esc: linear-gradient(var(--pink), var(--pink));
-    --brazo: calc(var(--cuadro) * .07);
-    --filo: max(2px, calc(var(--cuadro) * .0085));  /* el grosor crece con el brazo */
-    background:
-      var(--esc) left  top    / var(--brazo) var(--filo) no-repeat,
-      var(--esc) left  top    / var(--filo) var(--brazo) no-repeat,
-      var(--esc) right top    / var(--brazo) var(--filo) no-repeat,
-      var(--esc) right top    / var(--filo) var(--brazo) no-repeat,
-      var(--esc) left  bottom / var(--brazo) var(--filo) no-repeat,
-      var(--esc) left  bottom / var(--filo) var(--brazo) no-repeat,
-      var(--esc) right bottom / var(--brazo) var(--filo) no-repeat,
-      var(--esc) right bottom / var(--filo) var(--brazo) no-repeat;
-  }
-  .blank .stamp{
-    display: flex; align-items: center; gap: 10px;
-    height: 42px; padding: 0 11px;
-    background: var(--deep);
-  }
-  .blank .mk{ width: 18px; height: 18px; flex: 0 0 auto; opacity: .35; }
-  .blank .bars{ flex: 1 1 auto; display: flex; align-items: center; height: 100%; min-width: 0; }
-  /* los puntos del silencio toman el acento: el cuadro esta armado,
-     le falta el momento */
-  .blank .bars i{ flex: 0 0 auto; display: block; border-radius: 99px;
-                  background: rgba(var(--pink-rgb), .45); }
+            .unexposed::after {
+                content: "";
+                position: absolute;
+                inset: calc(var(--cuadro) * 0.05);
+                --esc: linear-gradient(var(--pink), var(--pink));
+                --brazo: calc(var(--cuadro) * 0.07);
+                --filo: max(2px, calc(var(--cuadro) * 0.0085));
+                background:
+                    var(--esc) left top / var(--brazo) var(--filo) no-repeat,
+                    var(--esc) left top / var(--filo) var(--brazo) no-repeat,
+                    var(--esc) right top / var(--brazo) var(--filo) no-repeat,
+                    var(--esc) right top / var(--filo) var(--brazo) no-repeat,
+                    var(--esc) left bottom / var(--brazo) var(--filo) no-repeat,
+                    var(--esc) left bottom / var(--filo) var(--brazo) no-repeat,
+                    var(--esc) right bottom / var(--brazo) var(--filo) no-repeat,
+                    var(--esc) right bottom / var(--filo) var(--brazo) no-repeat;
+            }
+            .blank .stamp {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                height: 42px;
+                padding: 0 11px;
+                background: var(--deep);
+            }
+            .blank .mk {
+                width: 18px;
+                height: 18px;
+                flex: 0 0 auto;
+                opacity: 0.35;
+            }
+            .blank .bars {
+                flex: 1 1 auto;
+                display: flex;
+                align-items: center;
+                height: 100%;
+                min-width: 0;
+            }
+            .blank .bars i {
+                flex: 0 0 auto;
+                display: block;
+                border-radius: 99px;
+                background: rgba(var(--pink-rgb), 0.45);
+            }
 
-  /* La cola: el rollo sigue y se pierde, no termina en un borde. En una pelicula
-     revelada la cola es donde el laboratorio deja su marca, asi que el colofon va
-     aca y no en un panel: se llega al final, no compite con el boton, y se apaga
-     junto con el rollo. Mismo monospace que el margen impreso, para que los dos se
-     lean como cosas escritas sobre la pelicula y no como interfaz. */
-  .tail{
-    position: relative;
-    flex: 0 0 auto;
-    width: clamp(190px, 34vw, 430px);
-    align-self: stretch;
-    background: linear-gradient(to right, var(--strip), var(--ink));
-    display: grid;
-    place-items: center;
-  }
-  .colofon{
-    margin: 0;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 9px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    line-height: 2.1;
-    color: rgba(var(--tint), .2);
-    text-align: center;
-    user-select: none;
-  }
-  /* "revelado" es lo que se le hace a un rollo y lo que hace el que lo escribio */
-  /* El colofon es un sniq de verdad, no un dibujo de uno: mismo reproductor, misma
-     banda, misma onda que se llena. Lo ultimo que queda de la pelicula habla el idioma
-     de la pelicula, y encima se puede escuchar.
-     Solo cambian las medidas: a 148 px el circulo de play de 56 tapaba medio cuadro. */
-  .yo-sniq{ width: 148px; }
-  .yo-sniq .sniq-colofon{ width: 148px; }
-  .yo-sniq .play{ width: 38px; height: 38px; }
-  .yo-sniq .play svg{ width: 12px; height: 13px; margin-left: 2px; }
-  .yo-sniq .stamp{ height: 30px; padding: 0 9px; gap: 8px; }
-  .yo-sniq .stamp .mk{ width: 13px; height: 13px; }
-  .yo-sniq .colofon{ margin-top: 12px; }
-  .colofon b{
-    display: block;
-    font-weight: 400;
-    color: rgba(var(--pink-rgb), .55);
-    text-transform: none;      /* MatiCepe es un handle, conserva su caja */
-    letter-spacing: .12em;
-  }
+            .tail {
+                position: relative;
+                flex: 0 0 auto;
+                width: clamp(190px, 34vw, 430px);
+                align-self: stretch;
+                background: linear-gradient(to right, var(--strip), var(--ink));
+                display: grid;
+                place-items: center;
+            }
+            .colofon {
+                margin: 0;
+                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size: 9px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                line-height: 2.1;
+                color: rgba(var(--tint), 0.2);
+                text-align: center;
+                user-select: none;
+            }
 
-  .colofon-link{
-    position: absolute;
-    left: 0; right: 0;
-    bottom: calc(34px + 15px + 12px);
-    z-index: 4;
-    margin: 0;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-    font-size: 9px;
-    letter-spacing: .22em;
-    text-transform: uppercase;
-    line-height: 2.1;
-    text-align: center;
-  }
-  .colofon-link a{
-    color: rgba(var(--tint), .3);
-    text-decoration: none;
-    transition: color .2s ease;
-  }
-  .colofon-link a:hover,
-  .colofon-link a:focus-visible{ color: rgba(var(--tint), .6); }
+            .yo-sniq {
+                width: 148px;
+            }
+            .yo-sniq .sniq-colofon {
+                width: 148px;
+            }
+            .yo-sniq .play {
+                width: 38px;
+                height: 38px;
+            }
+            .yo-sniq .play svg {
+                width: 12px;
+                height: 13px;
+                margin-left: 2px;
+            }
+            .yo-sniq .stamp {
+                height: 30px;
+                padding: 0 9px;
+                gap: 8px;
+            }
+            .yo-sniq .stamp .mk {
+                width: 13px;
+                height: 13px;
+            }
+            .yo-sniq .colofon {
+                margin-top: 12px;
+            }
+            .colofon b {
+                display: block;
+                font-weight: 400;
+                color: rgba(var(--pink-rgb), 0.55);
+                text-transform: none;
+                letter-spacing: 0.12em;
+            }
 
-  .privacy{ color: var(--mute); font-size: .94rem; max-width: 40ch; }
-  .sig{ display: flex; align-items: center; gap: 10px; opacity: .5; }
-  .sig .m{ width: 19px; } .sig .w{ width: 48px; }
+            .colofon-link {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: calc(34px + 15px + 12px);
+                z-index: 4;
+                margin: 0;
+                font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+                font-size: 9px;
+                letter-spacing: 0.22em;
+                text-transform: uppercase;
+                line-height: 2.1;
+                text-align: center;
+            }
+            .colofon-link a {
+                color: rgba(var(--tint), 0.3);
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            .colofon-link a:hover,
+            .colofon-link a:focus-visible {
+                color: rgba(var(--tint), 0.6);
+            }
 
-  .nudge{
-    position: fixed;
-    left: 50%; bottom: 13px;
-    transform: translateX(-50%);
-    font-family: var(--body);
-    font-weight: 500;
-    font-size: .8rem;
-    letter-spacing: .14em;
-    color: var(--mute);
-    z-index: 5;
-    pointer-events: none;
-    transition: opacity .4s ease;
-  }
-  .nudge.gone{ opacity: 0; }
+            .privacy {
+                color: var(--mute);
+                font-size: 0.94rem;
+                max-width: 40ch;
+            }
+            .sig {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                opacity: 0.5;
+            }
+            .sig .m {
+                width: 19px;
+            }
+            .sig .w {
+                width: 48px;
+            }
 
-  /* El switch de idioma. Vive sobre el riel de arriba, como el nudge sobre el
-     de abajo, y el idioma en pantalla queda inerte para que se lea cual es. */
-  .lang{
-    position: fixed;
-    top: 13px; right: 16px;
-    display: flex; gap: 10px;
-    margin: 0;
-    font-family: var(--body);
-    font-weight: 500;
-    font-size: .8rem;
-    letter-spacing: .14em;
-    z-index: 6;
-  }
-  .lang [aria-current]{ color: var(--text); }
-  .lang a{ color: var(--mute); text-decoration: none; transition: color .2s ease; }
-  .lang a:hover, .lang a:focus-visible{ color: var(--text); }
+            .nudge {
+                position: fixed;
+                left: 50%;
+                bottom: 13px;
+                transform: translateX(-50%);
+                font-family: var(--body);
+                font-weight: 500;
+                font-size: 0.8rem;
+                letter-spacing: 0.14em;
+                color: var(--mute);
+                z-index: 5;
+                pointer-events: none;
+                transition: opacity 0.4s ease;
+            }
+            .nudge.gone {
+                opacity: 0;
+            }
 
-  @media (max-width: 640px){
-    .panel{ padding-block: 44px; padding-inline: 24px; }
-    .rail{ height: 22px; }
-    .panel.words{ width: min(92vw, 420px); }
-  }
-  @media (prefers-reduced-motion: reduce){
-    .veil, .nudge{ transition: none; }
-    .sniq-btn, .shot{ transition: none; }
-    .sniq-btn:hover{ top: 0; }
-  }
-</style>
-</head>
-<body>
+            .lang {
+                position: fixed;
+                top: 13px;
+                right: 16px;
+                display: flex;
+                gap: 10px;
+                margin: 0;
+                font-family: var(--body);
+                font-weight: 500;
+                font-size: 0.8rem;
+                letter-spacing: 0.14em;
+                z-index: 6;
+            }
+            .lang [aria-current] {
+                color: var(--text);
+            }
+            .lang a {
+                color: var(--mute);
+                text-decoration: none;
+                transition: color 0.2s ease;
+            }
+            .lang a:hover,
+            .lang a:focus-visible {
+                color: var(--text);
+            }
 
-<div class="viewport" id="vp" tabindex="0" aria-label="A roll of sniqs, scrolls sideways">
-  <div class="roll">
-    <div class="edge" id="edge" aria-hidden="true"></div>
-    <div class="rail t"></div>
-    <div class="rail b"></div>
+            @media (max-width: 640px) {
+                .panel {
+                    padding-block: 44px;
+                    padding-inline: 24px;
+                }
+                .rail {
+                    height: 22px;
+                }
+                .panel.words {
+                    width: min(92vw, 420px);
+                }
+            }
+            @media (prefers-reduced-motion: reduce) {
+                .veil,
+                .nudge {
+                    transition: none;
+                }
+                .sniq-btn,
+                .shot {
+                    transition: none;
+                }
+                .sniq-btn:hover {
+                    top: 0;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="viewport" id="vp" tabindex="0" aria-label="A roll of sniqs, scrolls sideways">
+            <div class="roll">
+                <div class="edge" id="edge" aria-hidden="true"></div>
+                <div class="rail t"></div>
+                <div class="rail b"></div>
 
-    <div class="ghosts" aria-hidden="true">
-      <span class="ghost" data-for="01" data-par="0.26">sound</span>
-      <span class="ghost" data-for="02" data-par="0.26">before</span>
-      <span class="ghost" data-for="03" data-par="0.26">anyway</span>
-      <span class="ghost" data-for="04" data-par="0.26">yet</span>
-    </div>
+                <div class="ghosts" aria-hidden="true">
+                    <span class="ghost" data-for="01" data-par="0.26">sound</span>
+                    <span class="ghost" data-for="02" data-par="0.26">before</span>
+                    <span class="ghost" data-for="03" data-par="0.26">anyway</span>
+                    <span class="ghost" data-for="04" data-par="0.26">yet</span>
+                </div>
 
-    <section class="panel words">
-      <img class="brand" src="../img/sniq_wordmark.png" alt="sniq">
-      <h1>hear your moments</h1>
-      <p class="lead">Take the picture like you always do. The sound was already there.</p>
-      <span class="cta soon">Coming soon to Android</span>
-      <p class="claims"><span>Free.</span><span>No account.</span><span>No ads.</span></p>
-    </section>
-    <section class="panel frame">
-      <div class="sniq" data-sniq
-           data-src="../media/a.mp4"
-           data-poster="../media/a.jpg"
-           data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"></div>
-    </section>
-    <section class="panel words" id="p01">
-      <p class="num">01</p>
-      <h2>your photo <span class="plus">+</span> its <span class="pink">s</span>ound</h2>
-      <p class="lead">That's a sniq.</p>
-      <p class="say">Share it with anyone, on your story, on your status, on any feed. And wherever it lands, it still plays!</p>
-    </section>
-    <section class="panel frame">
-      <div class="sniq" data-sniq
-           data-src="../media/b.mp4"
-           data-poster="../media/b.jpg"
-           data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"></div>
-    </section>
-    <section class="panel words" id="p02">
-      <p class="num">02</p>
-      <h2>you ca<span class="pink">n</span>'t be late</h2>
-      <p class="lead">By the time you think to hit record, the laugh is gone.</p>
-      <p class="say">Here you don't have to see it coming. You press <b>after</b> it happened, and the seconds before are still there.</p>
-    </section>
-    <section class="panel frame">
-      <div class="sniq" data-sniq
-           data-src="../media/c.mp4"
-           data-poster="../media/c.jpg"
-           data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"></div>
-    </section>
-    <section class="panel words" id="p03">
-      <p class="num">03</p>
-      <h2>even with no s<span class="pink">i</span>gnal</h2>
-      <p class="lead">On the subway, out in the country, at a party where nothing gets through: shoot anyway.</p>
-      <p class="say">Your sniqs stay with you and you send them later… whenever you want, as many times as you want.</p>
-    </section>
-    <section class="panel frame">
-      <div class="sniq" data-sniq
-           data-src="../media/d.mp4"
-           data-poster="../media/d.jpg"
-           data-peaks="[0.0,0.287,0.312,0.322,0.2,0.105,0.096,0.082,0.338,0.801,1.0,0.564,0.843,0.681,0.544,0.123,0.187,0.09,0.109,0.068,0.07,0.064,0.062,0.065,0.052,0.136,0.081,0.108,0.321,0.215,0.079,0.087,0.065,0.064,0.058,0.047,0.057,0.066,0.095,0.105,0.125,0.11,0.063,0.078,0.043,0.085,0.076,0.051]"></div>
-    </section>
-    <section class="panel words" id="p04">
-      <p class="num">04</p>
-      <h2>not <span class="pink">q</span>uite yet…</h2>
-      <p class="lead">A frame is missing here.</p>
-      <p class="say">This roll isn't finished, and what comes next leaves the screen.</p>
-    </section>
-    <section class="panel frame">
-      <div class="blank">
-        <span class="unexposed"></span>
-        <div data-silence></div>
-      </div>
-    </section>
-    <section class="panel words">
-      <h2>start your roll</h2>
-      <span class="cta soon">Coming soon to Android</span>
-      <p class="under">Android 8 and up.</p>
-      <p class="privacy">The mic listens, but nothing is saved until you take the photo, and nothing leaves your phone.</p>
-      <div class="sig">
-        <img class="m" src="../img/sniq_mark.png" alt="">
-        <img class="w" src="../img/sniq_wordmark.png" alt="sniq">
-      </div>
-    </section>
-    <div class="tail">
-      <div class="yo-sniq">
-        <div class="sniq-colofon" data-sniq
-             data-src="../colofon.mp4"
-             data-poster="../colofon.jpg"
-             data-peaks="[0.001,0.205,0.184,0.416,0.31,0.331,0.416,0.259,0.352,0.238,0.243,0.71,0.352,0.217,0.523,0.395,0.148,0.295,0.401,0.603,0.601,0.336,0.311,0.232,0.528,0.367,0.375,0.262,0.371,0.31,0.244,0.54,0.571,0.236,0.359,0.219,0.548,0.531,0.378,0.48,0.448,0.848,1.0,0.511,0.326,0.214,0.343,0.062]"></div>
-        <p class="colofon">developed by<b>MatiCepe</b></p>
-      </div>
-      <p class="colofon-link"><a href="privacy/">privacy</a></p>
-    </div>
-  </div>
-</div>
+                <section class="panel words">
+                    <img class="brand" src="../img/sniq_wordmark.png" alt="sniq" />
+                    <h1>hear your moments</h1>
+                    <p class="lead">Take the picture like you always do. The sound was already there.</p>
+                    <span class="cta soon">Coming soon to Android</span>
+                    <p class="claims"><span>Free.</span><span>No account.</span><span>No ads.</span></p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/a.mp4"
+                        data-poster="../media/a.jpg"
+                        data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p01">
+                    <p class="num">01</p>
+                    <h2>your photo <span class="plus">+</span> its <span class="pink">s</span>ound</h2>
+                    <p class="lead">That's a sniq.</p>
+                    <p class="say">
+                        Share it with anyone, on your story, on your status, on any feed. And wherever it lands, it
+                        still plays!
+                    </p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/b.mp4"
+                        data-poster="../media/b.jpg"
+                        data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p02">
+                    <p class="num">02</p>
+                    <h2>you ca<span class="pink">n</span>'t be late</h2>
+                    <p class="lead">By the time you think to hit record, the laugh is gone.</p>
+                    <p class="say">
+                        Here you don't have to see it coming. You press <b>after</b> it happened, and the seconds before
+                        are still there.
+                    </p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/c.mp4"
+                        data-poster="../media/c.jpg"
+                        data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p03">
+                    <p class="num">03</p>
+                    <h2>even with no s<span class="pink">i</span>gnal</h2>
+                    <p class="lead">
+                        On the subway, out in the country, at a party where nothing gets through: shoot anyway.
+                    </p>
+                    <p class="say">
+                        Your sniqs stay with you and you send them later… whenever you want, as many times as you want.
+                    </p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/d.mp4"
+                        data-poster="../media/d.jpg"
+                        data-peaks="[0.0,0.287,0.312,0.322,0.2,0.105,0.096,0.082,0.338,0.801,1.0,0.564,0.843,0.681,0.544,0.123,0.187,0.09,0.109,0.068,0.07,0.064,0.062,0.065,0.052,0.136,0.081,0.108,0.321,0.215,0.079,0.087,0.065,0.064,0.058,0.047,0.057,0.066,0.095,0.105,0.125,0.11,0.063,0.078,0.043,0.085,0.076,0.051]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p04">
+                    <p class="num">04</p>
+                    <h2>not <span class="pink">q</span>uite yet…</h2>
+                    <p class="lead">A frame is missing here.</p>
+                    <p class="say">This roll isn't finished, and what comes next leaves the screen.</p>
+                </section>
+                <section class="panel frame">
+                    <div class="blank">
+                        <span class="unexposed"></span>
+                        <div data-silence></div>
+                    </div>
+                </section>
+                <section class="panel words">
+                    <h2>start your roll</h2>
+                    <span class="cta soon">Coming soon to Android</span>
+                    <p class="under">Android 8 and up.</p>
+                    <p class="privacy">
+                        The mic listens, but nothing is saved until you take the photo, and nothing leaves your phone.
+                    </p>
+                    <div class="sig">
+                        <img class="m" src="../img/sniq_mark.png" alt="" />
+                        <img class="w" src="../img/sniq_wordmark.png" alt="sniq" />
+                    </div>
+                </section>
+                <div class="tail">
+                    <div class="yo-sniq">
+                        <div
+                            class="sniq-colofon"
+                            data-sniq
+                            data-src="../colofon.mp4"
+                            data-poster="../colofon.jpg"
+                            data-peaks="[0.001,0.205,0.184,0.416,0.31,0.331,0.416,0.259,0.352,0.238,0.243,0.71,0.352,0.217,0.523,0.395,0.148,0.295,0.401,0.603,0.601,0.336,0.311,0.232,0.528,0.367,0.375,0.262,0.371,0.31,0.244,0.54,0.571,0.236,0.359,0.219,0.548,0.531,0.378,0.48,0.448,0.848,1.0,0.511,0.326,0.214,0.343,0.062]"
+                        ></div>
+                        <p class="colofon">developed by<b>MatiCepe</b></p>
+                    </div>
+                    <p class="colofon-link"><a href="privacy/">privacy</a></p>
+                </div>
+            </div>
+        </div>
 
-<p class="nudge" id="nudge">swipe sideways →</p>
-<p class="lang"><a href="../index.html" hreflang="es" lang="es">ES</a><span aria-current="true">EN</span></p>
+        <p class="nudge" id="nudge">swipe sideways →</p>
+        <p class="lang"><a href="../index.html" hreflang="es" lang="es">ES</a><span aria-current="true">EN</span></p>
 
-<script src="../_sniq.js"></script>
-<script>
-(function(){
-  var vp = document.getElementById('vp');
-  var nudge = document.getElementById('nudge');
-  var soft = !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        <script src="../_sniq.js"></script>
+        <script>
+            (function () {
+                var vp = document.getElementById("vp");
+                var nudge = document.getElementById("nudge");
+                var soft = !window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  var target = vp.scrollLeft;
-  var gliding = false;
+                var target = vp.scrollLeft;
+                var gliding = false;
 
-  function limit(x){
-    var max = vp.scrollWidth - vp.clientWidth;
-    return x < 0 ? 0 : (x > max ? max : x);
-  }
+                function limit(x) {
+                    var max = vp.scrollWidth - vp.clientWidth;
+                    return x < 0 ? 0 : x > max ? max : x;
+                }
 
-  // Sin scroll-snap a proposito: el enganche reescribe scrollLeft en cada cuadro
-  // del deslizamiento, y eso da tirones y no deja llegar al ultimo panel.
+                function toPixels(e) {
+                    if (e.deltaMode === 1) return e.deltaY * 40;
+                    if (e.deltaMode === 2) return e.deltaY * vp.clientWidth;
+                    return e.deltaY;
+                }
 
-  // La rueda no siempre habla en pixeles: en modo linea son ~3 por muesca y en
-  // modo pagina, una. Sin normalizar, un giro movia tres pixeles y habia que
-  // girar una eternidad para cambiar de cuadro.
-  function toPixels(e){
-    if (e.deltaMode === 1) return e.deltaY * 40;          // lineas
-    if (e.deltaMode === 2) return e.deltaY * vp.clientWidth; // paginas
-    return e.deltaY;                                       // pixeles
-  }
+                function glide() {
+                    target = limit(target);
+                    var cur = vp.scrollLeft;
+                    var d = target - cur;
+                    if (Math.abs(d) <= 1) {
+                        vp.scrollLeft = target;
+                        gliding = false;
+                        return;
+                    }
+                    var step = d * 0.2;
+                    if (Math.abs(step) < 1) step = d > 0 ? 1 : -1;
+                    vp.scrollLeft = cur + step;
+                    requestAnimationFrame(glide);
+                }
 
-  function glide(){
-    target = limit(target);          // el tope cambia si la ventana cambia de tamano
-    var cur = vp.scrollLeft;
-    var d = target - cur;
-    if (Math.abs(d) <= 1){
-      vp.scrollLeft = target;
-      gliding = false;
-      return;
-    }
-    var step = d * 0.2;
-    // por debajo de un pixel el navegador redondea y el rollo se queda clavado
-    if (Math.abs(step) < 1) step = d > 0 ? 1 : -1;
-    vp.scrollLeft = cur + step;
-    requestAnimationFrame(glide);
-  }
+                function moveBy(px) {
+                    target = limit((gliding ? target : vp.scrollLeft) + px);
+                    if (!soft) {
+                        vp.scrollLeft = target;
+                        return;
+                    }
+                    if (!gliding) {
+                        gliding = true;
+                        requestAnimationFrame(glide);
+                    }
+                }
 
-  function moveBy(px){
-    target = limit((gliding ? target : vp.scrollLeft) + px);
-    if (!soft){ vp.scrollLeft = target; return; }
-    if (!gliding){ gliding = true; requestAnimationFrame(glide); }
-  }
+                vp.addEventListener(
+                    "wheel",
+                    function (e) {
+                        if (e.deltaY === 0 || e.shiftKey) return;
+                        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+                        var px = toPixels(e);
 
-  vp.addEventListener('wheel', function(e){
-    if (e.deltaY === 0 || e.shiftKey) return;
-    if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;  // trackpad horizontal: que lo haga el navegador
-    var px = toPixels(e);
-    // el trackpad manda muchos pasos chicos; la rueda, pocos y grandes
-    moveBy(px * (Math.abs(px) < 50 ? 1.2 : 2.4));
-    e.preventDefault();
-  }, { passive: false });
+                        moveBy(px * (Math.abs(px) < 50 ? 1.2 : 2.4));
+                        e.preventDefault();
+                    },
+                    { passive: false },
+                );
 
-  vp.addEventListener('keydown', function(e){
-    var step = vp.clientWidth * 0.8;
-    if (e.key === 'ArrowRight' || e.key === 'PageDown') moveBy(step);
-    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') moveBy(-step);
-    else if (e.key === 'Home') moveBy(-vp.scrollWidth);
-    else if (e.key === 'End') moveBy(vp.scrollWidth);
-    else return;
-    e.preventDefault();
-  });
+                vp.addEventListener("keydown", function (e) {
+                    var step = vp.clientWidth * 0.8;
+                    if (e.key === "ArrowRight" || e.key === "PageDown") moveBy(step);
+                    else if (e.key === "ArrowLeft" || e.key === "PageUp") moveBy(-step);
+                    else if (e.key === "Home") moveBy(-vp.scrollWidth);
+                    else if (e.key === "End") moveBy(vp.scrollWidth);
+                    else return;
+                    e.preventDefault();
+                });
 
-  // ---- palabras de fondo, arrastradas mas lento que el rollo ----
+                (function () {
+                    var edge = document.getElementById("edge");
+                    if (!edge) return;
+                    var roll = edge.parentNode;
 
-  // El margen impreso del rollo. Se arma aca y no a mano porque el largo del rollo
-  // depende de la ventana, y porque el numero de cuadro tiene que seguir subiendo
-  // como en la pelicula de verdad.
-  (function(){
-    var edge = document.getElementById('edge');
-    if (!edge) return;
-    var roll = edge.parentNode;
-    // Un codigo de tirada de una sola via. Tres bloques, ocho digitos cada uno.
-    var CODE = '68446C8F FBE9ED8B 89A11060';
+                    var CODE = "68446C8F FBE9ED8B 89A11060";
 
-    function tramo(n){
-      var num = n < 10 ? '0' + n : String(n);
-      return '<span>sniq <b>' + CODE + '</b> <i>\u25B8 ' + num + '</i>\u2003\u2003</span>';
-    }
+                    function tramo(n) {
+                        var num = n < 10 ? "0" + n : String(n);
+                        return "<span>sniq <b>" + CODE + "</b> <i>\u25B8 " + num + "</i>\u2003\u2003</span>";
+                    }
 
-    function fill(){
-      edge.innerHTML = tramo(1);
-      var uno = edge.firstElementChild.getBoundingClientRect().width;
-      if (!uno) return;                       // fuente todavia sin cargar
-      var n = Math.ceil(roll.offsetWidth / uno) + 1;
-      var html = '';
-      for (var i = 1; i <= n; i++) html += tramo(i);
-      edge.innerHTML = html;
-    }
+                    function fill() {
+                        edge.innerHTML = tramo(1);
+                        var uno = edge.firstElementChild.getBoundingClientRect().width;
+                        if (!uno) return;
+                        var n = Math.ceil(roll.offsetWidth / uno) + 1;
+                        var html = "";
+                        for (var i = 1; i <= n; i++) html += tramo(i);
+                        edge.innerHTML = html;
+                    }
 
-    fill();
-    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
-    if (window.ResizeObserver) new ResizeObserver(fill).observe(roll);
-  })();
+                    fill();
+                    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
+                    if (window.ResizeObserver) new ResizeObserver(fill).observe(roll);
+                })();
 
-  var ghosts = [];
-  var painting = false;
+                var ghosts = [];
+                var painting = false;
 
-  function measureGhosts(){
-    var nodes = document.querySelectorAll('.ghost');
-    ghosts = [];
-    for (var i = 0; i < nodes.length; i++){
-      var panel = document.getElementById('p' + nodes[i].getAttribute('data-for'));
-      if (!panel) continue;
-      var base = panel.offsetLeft + panel.offsetWidth / 2;   // offsetParent es .roll
-      nodes[i].style.left = base + 'px';
-      ghosts.push({
-        el: nodes[i],
-        k: parseFloat(nodes[i].getAttribute('data-par')) || 0.26,
-        c: base
-      });
-    }
-    paintGhosts();
-  }
+                function measureGhosts() {
+                    var nodes = document.querySelectorAll(".ghost");
+                    ghosts = [];
+                    for (var i = 0; i < nodes.length; i++) {
+                        var panel = document.getElementById("p" + nodes[i].getAttribute("data-for"));
+                        if (!panel) continue;
+                        var base = panel.offsetLeft + panel.offsetWidth / 2;
+                        nodes[i].style.left = base + "px";
+                        ghosts.push({
+                            el: nodes[i],
+                            k: parseFloat(nodes[i].getAttribute("data-par")) || 0.26,
+                            c: base,
+                        });
+                    }
+                    paintGhosts();
+                }
 
-  function paintGhosts(){
-    var vc = vp.scrollLeft + vp.clientWidth / 2;
-    for (var i = 0; i < ghosts.length; i++){
-      var g = ghosts[i];
-      var d = soft ? (vc - g.c) * g.k : 0;
-      g.el.style.transform = 'translate(-50%, -50%) translateX(' + d.toFixed(1) + 'px)';
-    }
-    painting = false;
-  }
+                function paintGhosts() {
+                    var vc = vp.scrollLeft + vp.clientWidth / 2;
+                    for (var i = 0; i < ghosts.length; i++) {
+                        var g = ghosts[i];
+                        var d = soft ? (vc - g.c) * g.k : 0;
+                        g.el.style.transform = "translate(-50%, -50%) translateX(" + d.toFixed(1) + "px)";
+                    }
+                    painting = false;
+                }
 
-  window.addEventListener('resize', measureGhosts);
-  window.addEventListener('load', measureGhosts);
-  measureGhosts();
+                window.addEventListener("resize", measureGhosts);
+                window.addEventListener("load", measureGhosts);
+                measureGhosts();
 
-  vp.addEventListener('scroll', function(){
-    if (!gliding) target = vp.scrollLeft;   // dedo, barra o cualquier otra cosa
-    if (vp.scrollLeft > 40) nudge.classList.add('gone');
-    if (!painting){ painting = true; requestAnimationFrame(paintGhosts); }
-  }, { passive: true });
-})();
-</script>
-</body>
+                vp.addEventListener(
+                    "scroll",
+                    function () {
+                        if (!gliding) target = vp.scrollLeft;
+                        if (vp.scrollLeft > 40) nudge.classList.add("gone");
+                        if (!painting) {
+                            painting = true;
+                            requestAnimationFrame(paintGhosts);
+                        }
+                    },
+                    { passive: true },
+                );
+            })();
+        </script>
+    </body>
 </html>
