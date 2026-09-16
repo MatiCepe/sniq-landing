@@ -16,44 +16,42 @@
   }
   *{ box-sizing: border-box; margin: 0; }
   body{
-    width: 1200px; height: 630px;
+    width: 1024px; height: 500px;
     background: var(--ink);
     color: var(--text);
     font-family: var(--body);
     overflow: hidden;
     position: relative;
   }
-  /* El mismo riel de perforaciones que enmarca la landing */
   .rail{
-    position: absolute; left: 0; right: 0; height: 34px; z-index: 2;
+    position: absolute; left: 0; right: 0; height: 27px; z-index: 2;
     background: repeating-linear-gradient(to right,
-      transparent 0 14px, var(--hole) 14px 32px, transparent 32px 46px);
+      transparent 0 11px, var(--hole) 11px 26px, transparent 26px 37px);
     opacity: .9;
   }
   .rail.t{ top: 0; } .rail.b{ bottom: 0; }
   .row{
-    height: 630px; display: flex; align-items: center; gap: 64px;
-    padding: 34px 76px;
+    height: 500px; display: flex; align-items: center; gap: 52px;
+    padding: 27px 64px;
   }
   .col{ flex: 1; }
-  .wordmark{ width: 132px; display: block; margin-bottom: 22px; }
+  .wordmark{ width: 112px; display: block; margin-bottom: 18px; }
   h1{
     font-family: var(--display);
-    font-size: 74px;
+    font-size: 58px;
     font-variation-settings: "wdth" 125, "wght" 800;
     letter-spacing: -.035em;
     line-height: .94;
   }
-  .lead{ margin-top: 20px; font-size: 22px; line-height: 1.45; color: var(--mute); max-width: 30ch; }
+  .lead{ margin-top: 16px; font-size: 18px; line-height: 1.45; color: var(--mute); max-width: 30ch; }
   .dom{
-    margin-top: 30px;
+    margin-top: 24px;
     font-family: var(--display);
     font-variation-settings: "wdth" 104, "wght" 700;
-    font-size: 20px; letter-spacing: .02em; color: var(--pink);
+    font-size: 17px; letter-spacing: .02em; color: var(--pink);
   }
-  /* El cuadro: esquina viva, que es la del material fotografico */
   .frame{
-    display: block; height: 534px; width: auto;
+    display: block; height: 416px; width: auto;
     box-shadow: 0 0 0 1px rgba(var(--tint), .09);
   }
   .shot{ flex: 0 0 auto; }
@@ -65,7 +63,7 @@
     <div class="col">
       <img class="wordmark" src="../img/sniq_wordmark.png" alt="sniq">
       <h1>hear your moments</h1>
-      <p class="lead">Take the picture like you always do. The sound was already there.</p>
+      <p class="lead">Take the photo as you always do. The sound of that instant was already there.</p>
       <p class="dom">sniq.app</p>
     </div>
     <div class="shot"><img class="frame" src="frame-actual.jpg" alt=""></div>
