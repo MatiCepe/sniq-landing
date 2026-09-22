@@ -55,6 +55,8 @@
                 --text: #eff0e4;
                 --mute: #9da18b;
                 --cuadro: min(46dvh, 460px, calc(100vw - 76px));
+                --texto-top: clamp(48px, 20dvh, 170px);
+                --texto-top-movil: clamp(44px, 9dvh, 76px);
                 --deep: #15170f;
                 --unexp: #363927;
                 --btnink: #0e0f09;
@@ -260,6 +262,7 @@
             .panel.words {
                 width: min(88vw, 540px);
                 justify-content: flex-start;
+                padding-block-start: var(--texto-top);
             }
             .panel.frame {
                 padding-inline: clamp(18px, 2vw, 30px);
@@ -658,6 +661,7 @@
                 }
                 .panel.words {
                     width: min(92vw, 420px);
+                    padding-block-start: var(--texto-top-movil);
                 }
             }
             @media (prefers-reduced-motion: reduce) {
