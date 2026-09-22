@@ -55,6 +55,7 @@
                 --text: #eff0e4;
                 --mute: #9da18b;
                 --cuadro: min(46dvh, 460px, calc(100vw - 76px));
+                --telefono: min(70dvh, 700px);
                 --texto-top: clamp(48px, 20dvh, 170px);
                 --texto-top-movil: clamp(44px, 9dvh, 76px);
                 --deep: #15170f;
@@ -267,6 +268,28 @@
             .panel.frame {
                 padding-inline: clamp(18px, 2vw, 30px);
                 align-items: center;
+            }
+            .paso {
+                position: relative;
+                flex: none;
+                height: var(--telefono);
+                aspect-ratio: var(--ar, 720 / 1440);
+                max-width: min(86vw, 460px);
+                margin: 0;
+                line-height: 0;
+                box-shadow: inset 0 0 0 1px rgba(var(--tint), 0.09);
+            }
+            .paso img {
+                display: block;
+                width: 100%;
+                height: 100%;
+            }
+            .foco {
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                pointer-events: none;
             }
 
             .num {
@@ -687,101 +710,103 @@
                 <div class="rail b"></div>
 
                 <div class="ghosts" aria-hidden="true">
-                    <span class="ghost" data-for="02" data-par="0.26">before</span>
-                    <span class="ghost" data-for="03" data-par="0.26">sounds</span>
-                    <span class="ghost" data-for="05" data-par="0.26">itself</span>
-                    <span class="ghost" data-for="06" data-par="0.26">anyway</span>
+                    <span class="ghost" data-for="01" data-par="0.26">before</span>
+                    <span class="ghost" data-for="03" data-par="0.26">now</span>
+                    <span class="ghost" data-for="04" data-par="0.26">itself</span>
+                    <span class="ghost" data-for="06" data-par="0.26">sounds</span>
                 </div>
 
                 <section class="panel words">
                     <img class="brand" src="../../img/sniq_wordmark.png" alt="sniq" />
                     <h1>how it works</h1>
-                    <p class="lead">A sniq is a photo with sound. This is everything it does.</p>
+                    <p class="lead">A sniq is a photo with sound. These are the six steps, and there is no seventh.</p>
                 </section>
                 <section class="panel words" id="p01">
                     <p class="num">01</p>
-                    <h2>what a <span class="pink">s</span>niq is</h2>
-                    <p class="lead">A photo with sound.</p>
-                    <p class="say">You take the photo the way you always do, and it keeps two seconds of the real audio of that instant. The image does not move: what comes back is the sound. That is a sniq, and that is the whole product.</p>
+                    <h2>point</h2>
+                    <p class="lead">Like any camera.</p>
+                    <p class="say">You open Sniq and you see what is in front of you. From that moment the microphone is already listening, but nothing is being saved yet: the sound lives for a few seconds in memory and overwrites itself.</p>
+                </section>
+                <section class="panel frame">
+                    <figure class="paso">
+                        <img src="../../img/pasos/visor.jpg" alt="The Sniq camera screen, whole: what is in front of you." />
+                    </figure>
                 </section>
                 <section class="panel words" id="p02">
                     <p class="num">02</p>
-                    <h2>the sound from <b>before</b> you press</h2>
-                    <p class="say">While the camera is open, the microphone keeps leaving the last seconds in the phone's memory. By the time you press the shutter, those seconds were already there. So there is no need to be quick: you press after the laugh happened, and the laugh still makes it in.</p>
+                    <h2>the light and the other camera</h2>
+                    <p class="lead">Top right, that is all.</p>
+                    <p class="say">The two lenses turn the camera around, and the bolt lights the torch for the dark end of the table, and it stays on until you put it out. Tap anywhere to focus, pinch to get closer: the camera settles the rest on its own.</p>
                 </section>
                 <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-src="../../media/a.mp4"
-                        data-poster="../../media/a.jpg"
-                        data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"
-                    ></div>
+                    <figure class="paso">
+                        <img src="../../img/pasos/visor.jpg" alt="The same screen dimmed, with a window opening over the two lenses and over the torch bolt." loading="lazy" decoding="async" />
+                        <svg class="foco" viewBox="0 0 720 1440" aria-hidden="true"><defs><mask id="f2"><rect width="720" height="1440" fill="#fff" /><rect x="620.7" y="24.2" width="80.6" height="63.6" rx="31.8" fill="#000"><animate attributeName="x" values="620.7;620.7;635.2;635.2;620.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="24.2;24.2;119.7;119.7;24.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="80.6;80.6;51.6;51.6;80.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="63.6;63.6;64.6;64.6;63.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="31.8;31.8;25.8;25.8;31.8" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></mask></defs><rect width="720" height="1440" fill="#000" opacity="0.70" mask="url(#f2)" /><rect x="620.7" y="24.2" width="80.6" height="63.6" rx="31.8" fill="none" stroke="#fff" stroke-opacity="0.902" stroke-width="2.7"><animate attributeName="x" values="620.7;620.7;635.2;635.2;620.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="24.2;24.2;119.7;119.7;24.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="80.6;80.6;51.6;51.6;80.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="63.6;63.6;64.6;64.6;63.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="31.8;31.8;25.8;25.8;31.8" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></svg>
+                    </figure>
                 </section>
                 <section class="panel words" id="p03">
                     <p class="num">03</p>
-                    <h2>not a photo that <span class="pink">m</span>oves</h2>
-                    <p class="lead">A photo that sounds.</p>
-                    <p class="say">Some photos keep an instant of movement. A sniq keeps something else: the real sound of that moment, including the part from before you pressed. The image holds still. What comes back is what could be heard. If you got here looking for a live photo for Android, this is it, the other way around: here what moves is the air.</p>
+                    <h2>shoot</h2>
+                    <p class="lead">One tap, and that is it.</p>
+                    <p class="say">The ring takes the photo and keeps two seconds of sound, including the ones from before you pressed. The orange arc riding it is what the microphone can hear right now. Hold it down and the three and five second timer appears.</p>
+                </section>
+                <section class="panel frame">
+                    <figure class="paso">
+                        <img src="../../img/pasos/visor.jpg" alt="The same screen, with the window over the shutter ring and over the microphone's orange arc." loading="lazy" decoding="async" />
+                        <svg class="foco" viewBox="0 0 720 1440" aria-hidden="true"><defs><mask id="f3"><rect width="720" height="1440" fill="#fff" /><rect x="255.7" y="1171.7" width="208.6" height="208.6" rx="104.3" fill="#000"><animate attributeName="x" values="255.7;255.7;341.7;341.7;255.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="1171.7;1171.7;1182.2;1182.2;1171.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="208.6;208.6;64.6;64.6;208.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="208.6;208.6;51.6;51.6;208.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="104.3;104.3;25.8;25.8;104.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></mask></defs><rect width="720" height="1440" fill="#000" opacity="0.70" mask="url(#f3)" /><rect x="255.7" y="1171.7" width="208.6" height="208.6" rx="104.3" fill="none" stroke="#fff" stroke-opacity="0.902" stroke-width="2.7"><animate attributeName="x" values="255.7;255.7;341.7;341.7;255.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="1171.7;1171.7;1182.2;1182.2;1171.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="208.6;208.6;64.6;64.6;208.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="208.6;208.6;51.6;51.6;208.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="104.3;104.3;25.8;25.8;104.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></svg>
+                    </figure>
                 </section>
                 <section class="panel words" id="p04">
                     <p class="num">04</p>
+                    <h2>adjust, if you want</h2>
+                    <p class="lead">You almost never need to.</p>
+                    <p class="say">The two seconds pick themselves: out of everything the microphone had been hearing, Sniq keeps the stretch with something in it. If that was not the one, you drag the orange window over the waveform to the sound that was.</p>
+                </section>
+                <section class="panel frame">
+                    <figure class="paso">
+                        <img src="../../img/pasos/ajustar-en.jpg" alt="The adjust screen: the window opens over the whole wave and closes over the two seconds it keeps." loading="lazy" decoding="async" />
+                        <svg class="foco" viewBox="0 0 720 1440" aria-hidden="true"><defs><mask id="f4"><rect width="720" height="1440" fill="#fff" /><rect x="97.7" y="392.7" width="524.6" height="636.6" rx="25.6" fill="#000"><animate attributeName="x" values="97.7;97.7;349.7;349.7;97.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="392.7;392.7;527.7;527.7;392.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="524.6;524.6;184.6;184.6;524.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="636.6;636.6;404.6;404.6;636.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="25.6;25.6;25.6;25.6;25.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></mask></defs><rect width="720" height="1440" fill="#000" opacity="0.70" mask="url(#f4)" /><rect x="97.7" y="392.7" width="524.6" height="636.6" rx="25.6" fill="none" stroke="#fff" stroke-opacity="0.902" stroke-width="2.7"><animate attributeName="x" values="97.7;97.7;349.7;349.7;97.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="392.7;392.7;527.7;527.7;392.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="524.6;524.6;184.6;184.6;524.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="636.6;636.6;404.6;404.6;636.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="25.6;25.6;25.6;25.6;25.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></svg>
+                    </figure>
+                </section>
+                <section class="panel words" id="p05">
+                    <p class="num">05</p>
+                    <h2>all your sniqs</h2>
+                    <p class="lead">In order, each with its wave.</p>
+                    <p class="say">Every sniq is kept on the phone, with the orange band that shows how it sounds. From there you open whichever you want, and there is also a copy in the system gallery so other apps can find it.</p>
+                </section>
+                <section class="panel frame">
+                    <figure class="paso" style="--ar: 720 / 726; --telefono: min(46dvh, 450px)">
+                        <img src="../../img/pasos/galeria-en.jpg" alt="The Sniq gallery, with the window over one sniq and over its sound band." loading="lazy" decoding="async" />
+                        <svg class="foco" viewBox="0 0 720 726" aria-hidden="true"><defs><mask id="f5"><rect width="720" height="726" fill="#fff" /><rect x="-11.3" y="78.2" width="266.6" height="339.6" rx="25.6" fill="#000"><animate attributeName="x" values="-11.3;-11.3;-11.3;-11.3;-11.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="78.2;78.2;353.7;353.7;78.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="266.6;266.6;266.6;266.6;266.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="339.6;339.6;52.6;52.6;339.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="25.6;25.6;25.6;25.6;25.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></mask></defs><rect width="720" height="726" fill="#000" opacity="0.70" mask="url(#f5)" /><rect x="-11.3" y="78.2" width="266.6" height="339.6" rx="25.6" fill="none" stroke="#fff" stroke-opacity="0.902" stroke-width="2.7"><animate attributeName="x" values="-11.3;-11.3;-11.3;-11.3;-11.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="78.2;78.2;353.7;353.7;78.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="266.6;266.6;266.6;266.6;266.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="339.6;339.6;52.6;52.6;339.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="25.6;25.6;25.6;25.6;25.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></svg>
+                    </figure>
+                </section>
+                <section class="panel words" id="p06">
+                    <p class="num">06</p>
+                    <h2>share it</h2>
+                    <p class="lead">And it arrives sounding.</p>
+                    <p class="say">WhatsApp and Telegram are one tap away, and the orange button opens the Android menu to send it wherever you use. The sound travels inside the file, so it plays on the other person's phone even if they do not have Sniq.</p>
+                </section>
+                <section class="panel frame">
+                    <figure class="paso">
+                        <img src="../../img/pasos/compartir-en.jpg" alt="The result screen, with the window over the WhatsApp and Telegram shortcuts and over the share button." loading="lazy" decoding="async" />
+                        <svg class="foco" viewBox="0 0 720 1440" aria-hidden="true"><defs><mask id="f6"><rect width="720" height="1440" fill="#fff" /><rect x="248.2" y="1065.7" width="223.6" height="100.6" rx="50.3" fill="#000"><animate attributeName="x" values="248.2;248.2;241.7;241.7;248.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="1065.7;1065.7;1183.2;1183.2;1065.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="223.6;223.6;236.6;236.6;223.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="100.6;100.6;131.6;131.6;100.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="50.3;50.3;25.6;25.6;50.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></mask></defs><rect width="720" height="1440" fill="#000" opacity="0.70" mask="url(#f6)" /><rect x="248.2" y="1065.7" width="223.6" height="100.6" rx="50.3" fill="none" stroke="#fff" stroke-opacity="0.902" stroke-width="2.7"><animate attributeName="x" values="248.2;248.2;241.7;241.7;248.2" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="y" values="1065.7;1065.7;1183.2;1183.2;1065.7" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="width" values="223.6;223.6;236.6;236.6;223.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="height" values="100.6;100.6;131.6;131.6;100.6" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /><animate attributeName="rx" values="50.3;50.3;25.6;25.6;50.3" keyTimes="0;0.428;0.5;0.928;1" dur="3600ms" calcMode="spline" keySplines="0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1;0.4 0 0.2 1" repeatCount="indefinite" /></rect></svg>
+                    </figure>
+                </section>
+                <section class="panel words">
                     <h2>is it a video?</h2>
                     <p class="lead">The container is. The content is not.</p>
                     <p class="say">What you share is an mp4, so any app treats it as a video and that is why it sounds wherever it lands. But what you look at is a still photo: there are no two seconds of moving image, there is a photo and the sound around it.</p>
                 </section>
-                <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-src="../../media/b.mp4"
-                        data-poster="../../media/b.jpg"
-                        data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"
-                    ></div>
-                </section>
-                <section class="panel words" id="p05">
-                    <p class="num">05</p>
-                    <h2>the two seconds pick <b>themselves</b></h2>
-                    <p class="say">Out of everything the microphone had been hearing, Sniq keeps the two seconds with something in them: the laugh, the splash, the &laquo;look at this&raquo;. There is nothing to trim. And if the cut does not convince you, you move it by hand by dragging over the waveform.</p>
-                </section>
-                <section class="panel words" id="p06">
-                    <p class="num">06</p>
+                <section class="panel words">
                     <h2>it works with no <span class="pink">i</span>nternet</h2>
                     <p class="lead">And it is not a setting you can switch off.</p>
                     <p class="say">Sniq does not request Android's internet permission, so the system will not let it open any connection. It is an offline camera in the literal sense: in airplane mode, on the subway, out in the country. Your sniqs stay on the phone and you send them whenever you want.</p>
                 </section>
-                <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-provisional
-                        data-src="../../media/c.mp4"
-                        data-poster="../../media/c.jpg"
-                        data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"
-                    ></div>
-                </section>
-                <section class="panel words" id="p07">
-                    <p class="num">07</p>
-                    <h2>where you can share it</h2>
-                    <p class="say">Through the Android share menu, to whatever you use: WhatsApp, Telegram, Instagram, mail. It arrives sounding, because the sound travels inside the file and does not depend on the other person having Sniq. You can send the same sniq as many times as you like, days later.</p>
-                </section>
-                <section class="panel words" id="p08">
-                    <p class="num">08</p>
+                <section class="panel words">
                     <h2>what the microphone does</h2>
                     <p class="say">It listens while the camera is open, and nothing else. That audio lives only in memory, overwrites itself, and is discarded when you leave the screen. Nothing is saved until you press the shutter, and nothing leaves your phone unless you send it. It is all in <a href="../privacy/">privacy</a>.</p>
                 </section>
-                <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-provisional
-                        data-src="../../media/d.mp4"
-                        data-poster="../../media/d.jpg"
-                        data-peaks="[0.0,0.287,0.312,0.322,0.2,0.105,0.096,0.082,0.338,0.801,1.0,0.564,0.843,0.681,0.544,0.123,0.187,0.09,0.109,0.068,0.07,0.064,0.062,0.065,0.052,0.136,0.081,0.108,0.321,0.215,0.079,0.087,0.065,0.064,0.058,0.047,0.057,0.066,0.095,0.105,0.125,0.11,0.063,0.078,0.043,0.085,0.076,0.051]"
-                    ></div>
-                </section>
-                <section class="panel words" id="p09">
-                    <p class="num">09</p>
+                <section class="panel words">
                     <h2>what it costs</h2>
                     <p class="lead">Nothing.</p>
                     <p class="say">Free, no account, no sign up and no ads. There is no analytics and no third party services either: Sniq never asks who you are and has no way of knowing. It needs Android 8 or newer.</p>
@@ -818,6 +843,13 @@
         <p class="lang"><a href="../../como-funciona/" hreflang="es" lang="es">ES</a><span aria-current="true">EN</span></p>
 
         <script src="../../_sniq.js"></script>
+        <script>
+            (function () {
+                if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+                var quietas = document.querySelectorAll(".foco animate");
+                for (var i = 0; i < quietas.length; i++) quietas[i].parentNode.removeChild(quietas[i]);
+            })();
+        </script>
         <script>
             (function () {
                 var vp = document.getElementById("vp");
