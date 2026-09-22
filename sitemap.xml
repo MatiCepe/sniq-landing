@@ -15,6 +15,20 @@
         <xhtml:link rel="alternate" hreflang="x-default" href="https://sniq.app/" />
     </url>
     <url>
+        <loc>https://sniq.app/como-funciona/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <xhtml:link rel="alternate" hreflang="es" href="https://sniq.app/como-funciona/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sniq.app/en/how-it-works/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sniq.app/como-funciona/" />
+    </url>
+    <url>
+        <loc>https://sniq.app/en/how-it-works/</loc>
+        <lastmod>2026-09-21</lastmod>
+        <xhtml:link rel="alternate" hreflang="es" href="https://sniq.app/como-funciona/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://sniq.app/en/how-it-works/" />
+        <xhtml:link rel="alternate" hreflang="x-default" href="https://sniq.app/como-funciona/" />
+    </url>
+    <url>
         <loc>https://sniq.app/privacidad/</loc>
         <lastmod>2026-09-15</lastmod>
         <xhtml:link rel="alternate" hreflang="es" href="https://sniq.app/privacidad/" />

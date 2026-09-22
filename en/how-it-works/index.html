@@ -1,67 +1,40 @@
 <!doctype html>
-<html lang="es">
+<html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>sniq: oí tus fotos</title>
+        <title>how sniq works · photos you can hear</title>
         <meta
             name="description"
-            content="Cámara con sonido para Android. Sacás la foto y queda el audio de ese instante, hasta los segundos de antes de apretar. Gratis, sin cuenta y sin publicidad."
+            content="What a sniq is and how it works: a photo with sound, keeping the seconds of audio from before the shutter. No internet, no account, no ads."
         />
         <meta name="theme-color" content="#0F0F09" />
 
         <meta property="og:type" content="website" />
         <meta property="og:site_name" content="sniq" />
-        <meta property="og:url" content="https://sniq.app/" />
-        <meta property="og:title" content="oí tus momentos" />
+        <meta property="og:url" content="https://sniq.app/en/how-it-works/" />
+        <meta property="og:title" content="how sniq works" />
         <meta
             property="og:description"
-            content="Sacá la foto como siempre. El sonido de ese instante ya estaba ahí. Gratis, sin cuenta y sin publicidad."
+            content="What a sniq is, where the sound from before the shutter comes from, and why it works with no internet."
         />
-        <meta property="og:image" content="https://sniq.app/og.jpg" />
+        <meta property="og:image" content="https://sniq.app/en/og.jpg" />
         <meta property="og:image:type" content="image/jpeg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
-        <meta property="og:image:alt" content="La foto de un gato, y debajo la banda con el sonido de ese instante." />
-        <meta property="og:locale" content="es_AR" />
-        <meta property="og:locale:alternate" content="en_US" />
+        <meta
+            property="og:image:alt"
+            content="A photo of a cat, and below it the band with the sound of that moment."
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:locale:alternate" content="es_AR" />
         <meta name="twitter:card" content="summary_large_image" />
-        <link rel="icon" href="favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-        <link rel="canonical" href="https://sniq.app/" />
-        <link rel="alternate" hreflang="es" href="https://sniq.app/" />
-        <link rel="alternate" hreflang="en" href="https://sniq.app/en/" />
-        <link rel="alternate" hreflang="x-default" href="https://sniq.app/" />
-        <script type="application/ld+json">
-            {
-                "@context": "https://schema.org",
-                "@type": "MobileApplication",
-                "name": "sniq",
-                "url": "https://sniq.app/",
-                "inLanguage": "es",
-                "applicationCategory": "PhotoApplication",
-                "operatingSystem": "Android 8.0 o superior",
-                "description": "Cámara de fotos con sonido para Android. Sacás la foto y se guardan los segundos de audio de ese instante, incluso los de antes de apretar. Gratis, sin cuenta, sin publicidad y sin conexión.",
-                "image": "https://sniq.app/og.jpg",
-                "featureList": [
-                    "Fotos con sonido: la imagen queda quieta y vuelve el audio de ese instante",
-                    "Guarda los segundos anteriores al disparo",
-                    "Funciona sin conexión y sin cuenta",
-                    "Nada sale del teléfono"
-                ],
-                "offers": {
-                    "@type": "Offer",
-                    "price": "0",
-                    "priceCurrency": "USD"
-                },
-                "author": {
-                    "@type": "Organization",
-                    "name": "sniq",
-                    "url": "https://sniq.app/"
-                }
-            }
-        </script>
-
+        <link rel="icon" href="../../favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="../../apple-touch-icon.png" />
+        <link rel="canonical" href="https://sniq.app/en/how-it-works/" />
+        <link rel="alternate" hreflang="es" href="https://sniq.app/como-funciona/" />
+        <link rel="alternate" hreflang="en" href="https://sniq.app/en/how-it-works/" />
+        <link rel="alternate" hreflang="x-default" href="https://sniq.app/como-funciona/" />
         <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=Karla:wght@400;500;700&display=swap"
@@ -219,7 +192,6 @@
                 top: -1px;
             }
 
-            /* ---------- margin ----------*/
             .edge {
                 position: absolute;
                 left: 0;
@@ -321,6 +293,7 @@
                 letter-spacing: -0.01em;
                 text-decoration: none;
                 padding: 15px 30px;
+
                 border-radius: 99px;
             }
             .cta:hover {
@@ -355,8 +328,6 @@
                 line-height: 1.2;
                 color: var(--text);
             }
-
-            /* ----------  sniq---------- */
 
             .sniq {
                 display: block;
@@ -527,7 +498,6 @@
                 height: 100%;
                 min-width: 0;
             }
-
             .blank .bars i {
                 flex: 0 0 auto;
                 display: block;
@@ -705,110 +675,122 @@
         </style>
     </head>
     <body>
-        <div class="viewport" id="vp" tabindex="0" aria-label="Carrete de sniqs, se desplaza de costado">
+        <div class="viewport" id="vp" tabindex="0" aria-label="A roll of sniqs, scrolls sideways">
             <div class="roll">
                 <div class="edge" id="edge" aria-hidden="true"></div>
                 <div class="rail t"></div>
                 <div class="rail b"></div>
 
                 <div class="ghosts" aria-hidden="true">
-                    <span class="ghost" data-for="01" data-par="0.26">suena</span>
-                    <span class="ghost" data-for="02" data-par="0.26">antes</span>
-                    <span class="ghost" data-for="03" data-par="0.26">igual</span>
-                    <span class="ghost" data-for="04" data-par="0.26">todavía</span>
+                    <span class="ghost" data-for="02" data-par="0.26">before</span>
+                    <span class="ghost" data-for="03" data-par="0.26">sounds</span>
+                    <span class="ghost" data-for="05" data-par="0.26">itself</span>
+                    <span class="ghost" data-for="06" data-par="0.26">anyway</span>
                 </div>
 
                 <section class="panel words">
-                    <img class="brand" src="img/sniq_wordmark.png" alt="sniq" />
-                    <h1>oí tus momentos</h1>
-                    <p class="lead">Sacá la foto como siempre. El sonido de ese instante ya estaba ahí.</p>
-                    <span class="cta soon">Pronto en Android</span>
-                    <p class="claims"><span>Gratis.</span><span>Sin cuenta.</span><span>Sin publicidad.</span></p>
-                </section>
-                <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-src="media/a.mp4"
-                        data-poster="media/a.jpg"
-                        data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"
-                    ></div>
+                    <img class="brand" src="../../img/sniq_wordmark.png" alt="sniq" />
+                    <h1>how it works</h1>
+                    <p class="lead">A sniq is a photo with sound. This is everything it does.</p>
                 </section>
                 <section class="panel words" id="p01">
                     <p class="num">01</p>
-                    <h2>tu foto <span class="plus">+</span> su <span class="pink">s</span>onido</h2>
-                    <p class="lead">Eso es un sniq.</p>
-                    <p class="say">
-                        Compartilo con quien quieras, en tu historia, en tu estado, en cualquier red. ¡Y donde caiga,
-                        sigue sonando!
-                    </p>
-                </section>
-                <section class="panel frame">
-                    <div
-                        class="sniq"
-                        data-sniq
-                        data-src="media/b.mp4"
-                        data-poster="media/b.jpg"
-                        data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"
-                    ></div>
+                    <h2>what a <span class="pink">s</span>niq is</h2>
+                    <p class="lead">A photo with sound.</p>
+                    <p class="say">You take the photo the way you always do, and it keeps two seconds of the real audio of that instant. The image does not move: what comes back is the sound. That is a sniq, and that is the whole product.</p>
                 </section>
                 <section class="panel words" id="p02">
                     <p class="num">02</p>
-                    <h2><span class="pink">n</span>unca llegás tarde</h2>
-                    <p class="lead">Para cuando te acordás de grabar, la risa ya pasó.</p>
-                    <p class="say">
-                        Acá no hace falta adelantarse. Apretás <b>después</b> de que sonó, y los segundos de antes
-                        siguen estando.
-                    </p>
+                    <h2>the sound from <b>before</b> you press</h2>
+                    <p class="say">While the camera is open, the microphone keeps leaving the last seconds in the phone's memory. By the time you press the shutter, those seconds were already there. So there is no need to be quick: you press after the laugh happened, and the laugh still makes it in.</p>
                 </section>
                 <section class="panel frame">
                     <div
                         class="sniq"
                         data-sniq
-                        data-src="media/c.mp4"
-                        data-poster="media/c.jpg"
-                        data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"
+                        data-src="../../media/a.mp4"
+                        data-poster="../../media/a.jpg"
+                        data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"
                     ></div>
                 </section>
                 <section class="panel words" id="p03">
                     <p class="num">03</p>
-                    <h2>aun s<span class="pink">i</span>n señal</h2>
-                    <p class="lead">En el subte, en el campo, en una fiesta donde no entra nada: sacás igual.</p>
-                    <p class="say">
-                        Los sniqs se quedan con vos y los mandás después… cuando quieras, y las veces que quieras.
-                    </p>
+                    <h2>not a photo that <span class="pink">m</span>oves</h2>
+                    <p class="lead">A photo that sounds.</p>
+                    <p class="say">Some photos keep an instant of movement. A sniq keeps something else: the real sound of that moment, including the part from before you pressed. The image holds still. What comes back is what could be heard. If you got here looking for a live photo for Android, this is it, the other way around: here what moves is the air.</p>
+                </section>
+                <section class="panel words" id="p04">
+                    <p class="num">04</p>
+                    <h2>is it a video?</h2>
+                    <p class="lead">The container is. The content is not.</p>
+                    <p class="say">What you share is an mp4, so any app treats it as a video and that is why it sounds wherever it lands. But what you look at is a still photo: there are no two seconds of moving image, there is a photo and the sound around it.</p>
                 </section>
                 <section class="panel frame">
                     <div
                         class="sniq"
                         data-sniq
-                        data-src="media/d.mp4"
-                        data-poster="media/d.jpg"
+                        data-src="../../media/b.mp4"
+                        data-poster="../../media/b.jpg"
+                        data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p05">
+                    <p class="num">05</p>
+                    <h2>the two seconds pick <b>themselves</b></h2>
+                    <p class="say">Out of everything the microphone had been hearing, Sniq keeps the two seconds with something in them: the laugh, the splash, the &laquo;look at this&raquo;. There is nothing to trim. And if the cut does not convince you, you move it by hand by dragging over the waveform.</p>
+                </section>
+                <section class="panel words" id="p06">
+                    <p class="num">06</p>
+                    <h2>it works with no <span class="pink">i</span>nternet</h2>
+                    <p class="lead">And it is not a setting you can switch off.</p>
+                    <p class="say">Sniq does not request Android's internet permission, so the system will not let it open any connection. It is an offline camera in the literal sense: in airplane mode, on the subway, out in the country. Your sniqs stay on the phone and you send them whenever you want.</p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-provisional
+                        data-src="../../media/c.mp4"
+                        data-poster="../../media/c.jpg"
+                        data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"
+                    ></div>
+                </section>
+                <section class="panel words" id="p07">
+                    <p class="num">07</p>
+                    <h2>where you can share it</h2>
+                    <p class="say">Through the Android share menu, to whatever you use: WhatsApp, Telegram, Instagram, mail. It arrives sounding, because the sound travels inside the file and does not depend on the other person having Sniq. You can send the same sniq as many times as you like, days later.</p>
+                </section>
+                <section class="panel words" id="p08">
+                    <p class="num">08</p>
+                    <h2>what the microphone does</h2>
+                    <p class="say">It listens while the camera is open, and nothing else. That audio lives only in memory, overwrites itself, and is discarded when you leave the screen. Nothing is saved until you press the shutter, and nothing leaves your phone unless you send it. It is all in <a href="../privacy/">privacy</a>.</p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-provisional
+                        data-src="../../media/d.mp4"
+                        data-poster="../../media/d.jpg"
                         data-peaks="[0.0,0.287,0.312,0.322,0.2,0.105,0.096,0.082,0.338,0.801,1.0,0.564,0.843,0.681,0.544,0.123,0.187,0.09,0.109,0.068,0.07,0.064,0.062,0.065,0.052,0.136,0.081,0.108,0.321,0.215,0.079,0.087,0.065,0.064,0.058,0.047,0.057,0.066,0.095,0.105,0.125,0.11,0.063,0.078,0.043,0.085,0.076,0.051]"
                     ></div>
                 </section>
-                <section class="panel words" id="p04">
-                    <p class="num">04</p>
-                    <h2>y <span class="pink">q</span>ueda más…</h2>
-                    <p class="lead">Acá falta un cuadro.</p>
-                    <p class="say">Este rollo no está entero, y lo que viene sale de la pantalla.</p>
-                </section>
-                <section class="panel frame">
-                    <div class="blank">
-                        <span class="unexposed"></span>
-                        <div data-silence></div>
-                    </div>
+                <section class="panel words" id="p09">
+                    <p class="num">09</p>
+                    <h2>what it costs</h2>
+                    <p class="lead">Nothing.</p>
+                    <p class="say">Free, no account, no sign up and no ads. There is no analytics and no third party services either: Sniq never asks who you are and has no way of knowing. It needs Android 8 or newer.</p>
                 </section>
                 <section class="panel words">
-                    <h2>empezá tu rollo</h2>
-                    <span class="cta soon">Pronto en Android</span>
-                    <p class="under">Android 8 en adelante.</p>
+                    <h2>start your roll</h2>
+                    <span class="cta soon">Coming soon to Android</span>
+                    <p class="under">Android 8 and up.</p>
                     <p class="privacy">
-                        El micrófono escucha, pero nada se guarda hasta que sacás la foto, y nada sale del teléfono.
+                        The mic listens, but nothing is saved until you take the photo, and nothing leaves your phone.
                     </p>
                     <div class="sig">
-                        <img class="m" src="img/sniq_mark.png" alt="" />
-                        <img class="w" src="img/sniq_wordmark.png" alt="sniq" />
+                        <img class="m" src="../../img/sniq_mark.png" alt="" />
+                        <img class="w" src="../../img/sniq_wordmark.png" alt="sniq" />
                     </div>
                 </section>
                 <div class="tail">
@@ -816,21 +798,21 @@
                         <div
                             class="sniq-colofon"
                             data-sniq
-                            data-src="colofon.mp4"
-                            data-poster="colofon.jpg"
+                            data-src="../../colofon.mp4"
+                            data-poster="../../colofon.jpg"
                             data-peaks="[0.001,0.205,0.184,0.416,0.31,0.331,0.416,0.259,0.352,0.238,0.243,0.71,0.352,0.217,0.523,0.395,0.148,0.295,0.401,0.603,0.601,0.336,0.311,0.232,0.528,0.367,0.375,0.262,0.371,0.31,0.244,0.54,0.571,0.236,0.359,0.219,0.548,0.531,0.378,0.48,0.448,0.848,1.0,0.511,0.326,0.214,0.343,0.062]"
                         ></div>
-                        <p class="colofon">revelado por<b>MatiCepe</b></p>
+                        <p class="colofon">developed by<b>MatiCepe</b></p>
                     </div>
-                    <p class="colofon-link"><a href="como-funciona/">cómo funciona</a> · <a href="privacidad/">privacidad</a></p>
+                    <p class="colofon-link"><a href="../">sniq.app</a> · <a href="../privacy/">privacy</a></p>
                 </div>
             </div>
         </div>
 
-        <p class="nudge" id="nudge">deslizá de costado →</p>
-        <p class="lang"><span aria-current="true">ES</span><a href="en/index.html" hreflang="en" lang="en">EN</a></p>
+        <p class="nudge" id="nudge">swipe sideways →</p>
+        <p class="lang"><a href="../../como-funciona/" hreflang="es" lang="es">ES</a><span aria-current="true">EN</span></p>
 
-        <script src="_sniq.js"></script>
+        <script src="../../_sniq.js"></script>
         <script>
             (function () {
                 var vp = document.getElementById("vp");
@@ -846,9 +828,9 @@
                 }
 
                 function toPixels(e) {
-                    if (e.deltaMode === 1) return e.deltaY * 40; // lineas
-                    if (e.deltaMode === 2) return e.deltaY * vp.clientWidth; // paginas
-                    return e.deltaY; // pixeles
+                    if (e.deltaMode === 1) return e.deltaY * 40;
+                    if (e.deltaMode === 2) return e.deltaY * vp.clientWidth;
+                    return e.deltaY;
                 }
 
                 function glide() {
@@ -882,9 +864,9 @@
                     "wheel",
                     function (e) {
                         if (e.deltaY === 0 || e.shiftKey) return;
-                        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return; // trackpad horizontal: que lo haga el navegador
+                        if (Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
                         var px = toPixels(e);
-                        // el trackpad manda muchos pasos chicos; la rueda, pocos y grandes
+
                         moveBy(px * (Math.abs(px) < 50 ? 1.2 : 2.4));
                         e.preventDefault();
                     },
@@ -901,12 +883,11 @@
                     e.preventDefault();
                 });
 
-                // ---- words ----
-
                 (function () {
                     var edge = document.getElementById("edge");
                     if (!edge) return;
                     var roll = edge.parentNode;
+
                     var CODE = "68446C8F FBE9ED8B 89A11060";
 
                     function tramo(n) {
@@ -917,7 +898,7 @@
                     function fill() {
                         edge.innerHTML = tramo(1);
                         var uno = edge.firstElementChild.getBoundingClientRect().width;
-                        if (!uno) return; // fuente todavia sin cargar
+                        if (!uno) return;
                         var n = Math.ceil(roll.offsetWidth / uno) + 1;
                         var html = "";
                         for (var i = 1; i <= n; i++) html += tramo(i);
@@ -938,7 +919,7 @@
                     for (var i = 0; i < nodes.length; i++) {
                         var panel = document.getElementById("p" + nodes[i].getAttribute("data-for"));
                         if (!panel) continue;
-                        var base = panel.offsetLeft + panel.offsetWidth / 2; // offsetParent es .roll
+                        var base = panel.offsetLeft + panel.offsetWidth / 2;
                         nodes[i].style.left = base + "px";
                         ghosts.push({
                             el: nodes[i],
@@ -966,7 +947,7 @@
                 vp.addEventListener(
                     "scroll",
                     function () {
-                        if (!gliding) target = vp.scrollLeft; // dedo, barra o cualquier otra cosa
+                        if (!gliding) target = vp.scrollLeft;
                         if (vp.scrollLeft > 40) nudge.classList.add("gone");
                         if (!painting) {
                             painting = true;
