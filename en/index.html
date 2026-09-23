@@ -340,10 +340,6 @@
                 box-shadow: inset 0 0 0 1px rgba(var(--pink-rgb), 0.55);
                 cursor: default;
             }
-            .under {
-                font-size: 0.88rem;
-                color: var(--mute);
-            }
 
             .claims {
                 display: flex;
@@ -591,6 +587,31 @@
                 letter-spacing: 0.12em;
             }
 
+            .pedido {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: calc(34px + 15px + 12px + 46px);
+                z-index: 4;
+                margin: 0 auto;
+                max-width: 240px;
+                padding-inline: 18px;
+                font-size: 11px;
+                line-height: 1.55;
+                text-align: center;
+                text-wrap: balance;
+                color: rgba(var(--tint), 0.26);
+            }
+            .pedido a {
+                color: rgba(var(--tint), 0.48);
+                text-decoration: none;
+                border-bottom: 1px solid rgba(var(--tint), 0.16);
+                transition: color 0.2s ease;
+            }
+            .pedido a:hover,
+            .pedido a:focus-visible {
+                color: rgba(var(--tint), 0.8);
+            }
             .colofon-link {
                 position: absolute;
                 left: 0;
@@ -804,7 +825,6 @@
                 <section class="panel words">
                     <h2>start your roll</h2>
                     <span class="cta soon">Coming soon to Android</span>
-                    <p class="under">Android 8 and up.</p>
                     <p class="privacy">
                         The mic listens, but nothing is saved until you take the photo, and nothing leaves your phone.
                     </p>
@@ -824,6 +844,7 @@
                         ></div>
                         <p class="colofon">developed by<b>MatiCepe</b></p>
                     </div>
+                    <p class="pedido">Took one worth hearing?<br /><a href="mailto:hola@sniq.app">hola@sniq.app</a><br />If you let me, it might land here.</p>
                     <p class="colofon-link"><a href="how-it-works/">how it works</a> · <a href="privacy/">privacy</a></p>
                 </div>
             </div>

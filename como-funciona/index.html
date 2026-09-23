@@ -330,10 +330,6 @@
                 box-shadow: inset 0 0 0 1px rgba(var(--pink-rgb), 0.55);
                 cursor: default;
             }
-            .under {
-                font-size: 0.88rem;
-                color: var(--mute);
-            }
 
             .claims {
                 display: flex;
@@ -584,6 +580,31 @@
                 letter-spacing: 0.12em;
             }
 
+            .pedido {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: calc(34px + 15px + 12px + 46px);
+                z-index: 4;
+                margin: 0 auto;
+                max-width: 240px;
+                padding-inline: 18px;
+                font-size: 11px;
+                line-height: 1.55;
+                text-align: center;
+                text-wrap: balance;
+                color: rgba(var(--tint), 0.26);
+            }
+            .pedido a {
+                color: rgba(var(--tint), 0.48);
+                text-decoration: none;
+                border-bottom: 1px solid rgba(var(--tint), 0.16);
+                transition: color 0.2s ease;
+            }
+            .pedido a:hover,
+            .pedido a:focus-visible {
+                color: rgba(var(--tint), 0.8);
+            }
             .colofon-link {
                 position: absolute;
                 left: 0;
@@ -792,31 +813,55 @@
                     <p class="lead">El envase sí. El contenido no.</p>
                     <p class="say">Lo que se comparte es un mp4, así que cualquier app lo trata como video y por eso suena donde caiga. Pero lo que mirás es una foto quieta: no hay dos segundos de imagen en movimiento, hay una foto y el sonido que la rodea.</p>
                 </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/a.mp4"
+                        data-poster="../media/a.jpg"
+                        data-peaks="[0.0,0.003,0.008,0.006,0.008,0.007,0.007,0.007,0.005,0.006,0.005,0.005,0.006,0.009,0.008,0.008,0.006,0.005,0.006,0.009,0.008,0.009,0.01,0.007,0.006,0.007,0.007,0.007,0.006,0.006,0.097,0.783,1.0,0.822,0.698,0.808,0.952,0.508,0.168,0.478,0.887,0.776,0.623,0.502,0.317,0.22,0.06,0.018]"
+                    ></div>
+                </section>
                 <section class="panel words">
-                    <h2>funciona sin <span class="pink">i</span>nternet</h2>
+                    <h2>funciona sin internet</h2>
                     <p class="lead">Y no es una opción que se pueda apagar.</p>
                     <p class="say">Sniq no pide el permiso de internet de Android, así que el sistema no le permite abrir ninguna conexión. Es una cámara sin internet en el sentido literal: en modo avión, en el subte, en el campo. Los sniqs quedan en el teléfono y los mandás cuando quieras.</p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/b.mp4"
+                        data-poster="../media/b.jpg"
+                        data-peaks="[0.0,0.194,0.154,0.066,0.063,0.863,1.0,0.978,0.851,0.343,0.859,0.526,0.523,0.501,0.444,0.205,0.345,0.423,0.952,0.938,0.733,0.854,0.938,0.98,0.501,0.31,0.326,0.14,0.141,0.196,0.249,0.311,0.382,0.409,0.467,0.443,0.295,0.114,0.026,0.023,0.04,0.026,0.347,0.082,0.03,0.361,0.211,0.02]"
+                    ></div>
                 </section>
                 <section class="panel words">
                     <h2>qué hace el micrófono</h2>
                     <p class="say">Escucha mientras la cámara está abierta, y nada más. Ese audio vive sólo en memoria, se sobrescribe solo y se descarta cuando salís de la pantalla. No se guarda nada hasta que apretás el obturador, y nada sale del teléfono salvo que lo mandes vos. Está todo en <a href="../privacidad/">privacidad</a>.</p>
+                </section>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/c.mp4"
+                        data-poster="../media/c.jpg"
+                        data-peaks="[0.0,0.716,0.847,0.881,0.423,0.04,0.026,0.407,0.889,0.924,0.909,0.959,1.0,0.909,0.82,0.848,0.781,0.712,0.725,0.832,0.809,0.791,0.816,0.709,0.846,0.836,0.849,0.762,0.768,0.787,0.818,0.879,0.885,0.929,0.91,0.858,0.803,0.81,0.751,0.106,0.033,0.03,0.037,0.033,0.032,0.036,0.023,0.009]"
+                    ></div>
                 </section>
                 <section class="panel words">
                     <h2>cuánto cuesta</h2>
                     <p class="lead">Nada.</p>
                     <p class="say">Gratis, sin cuenta, sin registro y sin publicidad. Tampoco hay analítica ni servicios de terceros: Sniq nunca te pregunta quién sos y no tiene manera de saberlo. Hace falta Android 8 o más nuevo.</p>
                 </section>
-                <section class="panel words">
-                    <h2>empezá tu rollo</h2>
-                    <span class="cta soon">Pronto en Android</span>
-                    <p class="under">Android 8 en adelante.</p>
-                    <p class="privacy">
-                        El micrófono escucha, pero nada se guarda hasta que sacás la foto, y nada sale del teléfono.
-                    </p>
-                    <div class="sig">
-                        <img class="m" src="../img/sniq_mark.png" alt="" />
-                        <img class="w" src="../img/sniq_wordmark.png" alt="sniq" />
-                    </div>
+                <section class="panel frame">
+                    <div
+                        class="sniq"
+                        data-sniq
+                        data-src="../media/d.mp4"
+                        data-poster="../media/d.jpg"
+                        data-peaks="[0.0,0.287,0.312,0.322,0.2,0.105,0.096,0.082,0.338,0.801,1.0,0.564,0.843,0.681,0.544,0.123,0.187,0.09,0.109,0.068,0.07,0.064,0.062,0.065,0.052,0.136,0.081,0.108,0.321,0.215,0.079,0.087,0.065,0.064,0.058,0.047,0.057,0.066,0.095,0.105,0.125,0.11,0.063,0.078,0.043,0.085,0.076,0.051]"
+                    ></div>
                 </section>
                 <div class="tail">
                     <div class="yo-sniq">
@@ -829,6 +874,7 @@
                         ></div>
                         <p class="colofon">revelado por<b>MatiCepe</b></p>
                     </div>
+                    <p class="pedido">¿Sacaste uno que valga la pena?<br /><a href="mailto:hola@sniq.app">hola@sniq.app</a><br />Con tu permiso, capaz termina acá.</p>
                     <p class="colofon-link"><a href="../">sniq.app</a> · <a href="../privacidad/">privacidad</a></p>
                 </div>
             </div>
