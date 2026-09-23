@@ -247,6 +247,18 @@
                 font-style: normal;
                 color: rgba(var(--tint), 0.26);
             }
+            .edge.credits {
+                top: 34px;
+                bottom: auto;
+            }
+            .sr {
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip-path: inset(50%);
+                white-space: nowrap;
+            }
 
             .ghosts {
                 position: absolute;
@@ -729,6 +741,7 @@
         <div class="viewport" id="vp" tabindex="0" aria-label="Carrete de sniqs, se desplaza de costado">
             <div class="roll">
                 <div class="edge" id="edge" aria-hidden="true"></div>
+                <div class="edge credits" id="credits" aria-hidden="true" data-label="gracias a" data-src="gracias.txt"></div>
                 <div class="rail t"></div>
                 <div class="rail b"></div>
 
@@ -842,6 +855,7 @@
                         ></div>
                         <p class="colofon">revelado por<b>MatiCepe</b></p>
                     </div>
+                    <p class="sr" id="credits-sr"></p>
                     <p class="pedido">¿Sacaste uno que valga la pena?<br /><a href="mailto:hola@sniq.app">hola@sniq.app</a><br />Con tu permiso, capaz termina acá.</p>
                     <p class="colofon-link"><a href="como-funciona/">cómo funciona</a> · <a href="privacidad/">privacidad</a></p>
                 </div>
@@ -946,6 +960,56 @@
                     }
 
                     fill();
+                    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
+                    if (window.ResizeObserver) new ResizeObserver(fill).observe(roll);
+                })();
+
+                (function () {
+                    var edge = document.getElementById("credits");
+                    if (!edge) return;
+                    var roll = edge.parentNode;
+                    var label = edge.getAttribute("data-label");
+                    var sr = document.getElementById("credits-sr");
+                    var tramo = "";
+
+                    function esc(t) {
+                        return t.replace(/&/g, "&amp;").replace(/</g, "&lt;");
+                    }
+
+                    function fill() {
+                        if (!tramo) return;
+                        edge.innerHTML = tramo;
+                        var uno = edge.firstElementChild.getBoundingClientRect().width;
+                        if (!uno) return;
+                        var n = Math.ceil(roll.offsetWidth / uno) + 1;
+                        var html = "";
+                        for (var i = 0; i < n; i++) html += tramo;
+                        edge.innerHTML = html;
+                    }
+
+                    fetch(edge.getAttribute("data-src"))
+                        .then(function (r) {
+                            return r.ok ? r.text() : "";
+                        })
+                        .then(function (txt) {
+                            var names = txt
+                                .split("\n")
+                                .map(function (n) {
+                                    return n.trim();
+                                })
+                                .filter(Boolean);
+                            if (!names.length) return;
+                            if (sr) sr.textContent = label + " " + names.join(", ") + ".";
+                            tramo =
+                                "<span><b>" +
+                                esc(label) +
+                                "</b> <i>\u25B8</i> " +
+                                names.map(esc).join(" <i>\u00B7</i> ") +
+                                "\u2003\u2003</span>";
+                            fill();
+                        })
+                        .catch(function () {});
+
                     if (document.fonts && document.fonts.ready) document.fonts.ready.then(fill);
                     if (window.ResizeObserver) new ResizeObserver(fill).observe(roll);
                 })();
