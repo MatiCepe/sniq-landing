@@ -346,13 +346,6 @@
                 outline-offset: 3px;
             }
 
-            .cta.soon {
-                background: none;
-                color: var(--pink);
-                box-shadow: inset 0 0 0 1px rgba(var(--pink-rgb), 0.55);
-                cursor: default;
-            }
-
             .claims {
                 display: flex;
                 flex-direction: column;
@@ -603,7 +596,7 @@
                 position: absolute;
                 left: 0;
                 right: 0;
-                bottom: calc(34px + 15px + 12px + 46px);
+                bottom: calc(34px + 15px + 12px + 58px);
                 z-index: 4;
                 margin: 0 auto;
                 max-width: 240px;
@@ -628,24 +621,27 @@
                 position: absolute;
                 left: 0;
                 right: 0;
-                bottom: calc(34px + 15px + 12px);
+                bottom: calc(34px + 15px + 6px);
                 z-index: 4;
                 margin: 0;
                 font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-                font-size: 9px;
-                letter-spacing: 0.22em;
+                font-size: 12px;
+                letter-spacing: 0.16em;
                 text-transform: uppercase;
                 line-height: 2.1;
                 text-align: center;
+                color: rgba(var(--tint), 0.35);
             }
             .colofon-link a {
-                color: rgba(var(--tint), 0.3);
+                display: inline-block;
+                padding: 6px 4px;
+                color: rgba(var(--tint), 0.62);
                 text-decoration: none;
                 transition: color 0.2s ease;
             }
             .colofon-link a:hover,
             .colofon-link a:focus-visible {
-                color: rgba(var(--tint), 0.6);
+                color: rgba(var(--tint), 0.92);
             }
 
             .privacy {
@@ -721,6 +717,16 @@
                 .panel.words {
                     width: min(92vw, 420px);
                 }
+                .colofon-link a {
+                    display: block;
+                    padding: 4px;
+                }
+                .colofon-link .sep {
+                    display: none;
+                }
+                .pedido {
+                    bottom: calc(34px + 15px + 12px + 92px);
+                }
             }
             @media (prefers-reduced-motion: reduce) {
                 .veil,
@@ -756,7 +762,7 @@
                     <img class="brand" src="../img/sniq_wordmark.png" alt="sniq" />
                     <h1>hear your moments</h1>
                     <p class="lead">Take the picture like you always do. The sound was already there.</p>
-                    <span class="cta soon">Coming soon to Android</span>
+                    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sniq">Try it on Android</a>
                     <p class="claims"><span>Free.</span><span>No account.</span><span>No ads.</span></p>
                 </section>
                 <section class="panel frame">
@@ -837,7 +843,7 @@
                 </section>
                 <section class="panel words">
                     <h2>start your roll</h2>
-                    <span class="cta soon">Coming soon to Android</span>
+                    <a class="cta" href="https://play.google.com/store/apps/details?id=com.sniq">Try it on Android</a>
                     <p class="privacy">
                         The mic listens, but nothing is saved until you take the photo, and nothing leaves your phone.
                     </p>
@@ -859,7 +865,7 @@
                     </div>
                     <p class="sr" id="credits-sr"></p>
                     <p class="pedido">Took one worth hearing?<br /><a href="mailto:hola@sniq.app">hola@sniq.app</a><br />If you let me, it might land here.</p>
-                    <p class="colofon-link"><a href="how-it-works/">how it works</a> · <a href="privacy/">privacy</a></p>
+                    <p class="colofon-link"><a href="how-it-works/">how it works</a><span class="sep"> · </span><a href="privacy/">privacy</a></p>
                 </div>
             </div>
         </div>
